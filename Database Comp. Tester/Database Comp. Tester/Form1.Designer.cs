@@ -31,10 +31,9 @@
             this.InputTextBox = new System.Windows.Forms.TextBox();
             this.InputLabel = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
-            this.NextButton = new System.Windows.Forms.Button();
             this.OutputTextBox = new System.Windows.Forms.TextBox();
             this.OutputLabel = new System.Windows.Forms.Label();
-            this.PreviousButton = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // InputTextBox
@@ -49,9 +48,9 @@
             this.InputLabel.AutoSize = true;
             this.InputLabel.Location = new System.Drawing.Point(188, 169);
             this.InputLabel.Name = "InputLabel";
-            this.InputLabel.Size = new System.Drawing.Size(50, 20);
+            this.InputLabel.Size = new System.Drawing.Size(86, 20);
             this.InputLabel.TabIndex = 1;
-            this.InputLabel.Text = "Input :";
+            this.InputLabel.Text = "Student ID: ";
             // 
             // AddButton
             // 
@@ -62,16 +61,6 @@
             this.AddButton.Text = "Add To File";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // NextButton
-            // 
-            this.NextButton.Location = new System.Drawing.Point(530, 239);
-            this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(94, 29);
-            this.NextButton.TabIndex = 3;
-            this.NextButton.Text = "Next";
-            this.NextButton.UseVisualStyleBackColor = true;
-            this.NextButton.Click += new System.EventHandler(this.ReadButton_Click);
             // 
             // OutputTextBox
             // 
@@ -89,25 +78,22 @@
             this.OutputLabel.TabIndex = 5;
             this.OutputLabel.Text = "Output :";
             // 
-            // PreviousButton
+            // comboBox1
             // 
-            this.PreviousButton.Location = new System.Drawing.Point(646, 239);
-            this.PreviousButton.Name = "PreviousButton";
-            this.PreviousButton.Size = new System.Drawing.Size(94, 29);
-            this.PreviousButton.TabIndex = 6;
-            this.PreviousButton.Text = "Previous";
-            this.PreviousButton.UseVisualStyleBackColor = true;
-            this.PreviousButton.Click += new System.EventHandler(this.PreviousButton_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(396, 324);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.PreviousButton);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.OutputLabel);
             this.Controls.Add(this.OutputTextBox);
-            this.Controls.Add(this.NextButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.InputLabel);
             this.Controls.Add(this.InputTextBox);
@@ -124,9 +110,8 @@
         private TextBox InputTextBox;
         private Label InputLabel;
         private Button AddButton;
-        private Button NextButton;
         private TextBox OutputTextBox;
         private Label OutputLabel;
-        private Button PreviousButton;
+        private ComboBox comboBox1;
     }
 }

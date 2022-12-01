@@ -8,8 +8,9 @@ namespace Database_Comp._Tester
 {
     public partial class Form1 : Form
     {
-        string DatabasePath = Directory.GetCurrentDirectory() + "\\Students.json";
-        ArrayList Students = new ArrayList();
+        string StudentFolderPath = Directory.GetCurrentDirectory() + "\\Students\\";
+        string EventsPath = Directory.GetCurrentDirectory() + "\\Events.json";
+        string[] Students = Array.Empty<string>();
 
         int DatabasePos = 0;
         public Form1()
@@ -19,69 +20,45 @@ namespace Database_Comp._Tester
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Students = Directory.GetFiles(StudentFolderPath);
             OpenDatabase();
 
         }
         void OpenDatabase()
         {
-            StreamReader reader = new StreamReader(DatabasePath);
+            StreamReader reader = new StreamReader(EventsPath);
 
-            if (File.Exists(DatabasePath))
+            if (File.Exists(EventsPath))
             {
-                for (int i = 0; i < reader.Peek(); i++)
+                foreach (string events in reader.ReadLine().Split(" "))
                 {
-
-                    Students[i] = reader.ReadLine();
+                    comboBox1.Items.Add(events);
                 }
-            }
-            else
-            {
-                File.Create(DatabasePath);
             }
         }
 
         void CheckJson()
         {
-            for (int i = 0; i < Students.Count; i++)
+            for (int i = 0; i < Students.Length; i++)
             {
                 if (InputTextBox.Text == (string)Students[i])
                 {
-                    OutputLabel.Text = (string)Students[i];
+                    ReadJson(StudentFolderPath + "//" + Students[i], Students[i]);
                 }
             }
-            File.WriteAllText(DatabasePath, JsonSerializer.Serialize(InputTextBox.Text));
+            
         }
-        void ReadJson(int line)
+        void ReadJson(string path, string studentID)
         {
-            //StreamReader reader = new StreamReader(DatabasePath);
+            string[] FileContents = Array.Empty<string>();
+            StreamReader reader = new StreamReader(path);
 
-            //int pos = 0;
-            //while (reader.Peek() > -1)
-            //{
-            //    Sentences[pos] = reader.ReadLine();
-            //    pos++;
-            //}
-
-
-
-            //OutputTextBox.Text = Sentences[line].ToString();
+            FileContents = reader.ReadToEnd();
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
             CheckJson();
-        }
-
-        private void ReadButton_Click(object sender, EventArgs e)
-        {
-            //if (Sentences.Count> DatabasePos)
-            //    ReadJson(DatabasePos++);
-        }
-
-        private void PreviousButton_Click(object sender, EventArgs e)
-        {
-            if (DatabasePos >0)
-                ReadJson(DatabasePos--);
         }
     }
 }
