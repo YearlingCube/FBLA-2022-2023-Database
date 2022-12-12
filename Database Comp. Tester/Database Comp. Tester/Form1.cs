@@ -11,6 +11,7 @@ namespace Database_Comp._Tester
         string StudentFolderPath = Directory.GetCurrentDirectory() + "\\Students\\";
         string EventsPath = Directory.GetCurrentDirectory() + "\\Events.json";
         string[] Students = Array.Empty<string>();
+        string[] Events = Array.Empty<string>();
 
         int DatabasePos = 0;
         public Form1()
@@ -28,32 +29,55 @@ namespace Database_Comp._Tester
         {
             StreamReader reader = new StreamReader(EventsPath);
 
+            string[] Event = new string[2];
+            Events = File.ReadAllText(EventsPath).Split(" ");
             if (File.Exists(EventsPath))
             {
                 foreach (string events in reader.ReadLine().Split(" "))
                 {
-                    comboBox1.Items.Add(events);
+                    Event = events.Split("|");
+                    comboBox1.Items.Add(Event[0]);
                 }
+                reader.Close();
+                
             }
         }
 
         void CheckJson()
         {
+            string test;
+
             for (int i = 0; i < Students.Length; i++)
             {
-                if (InputTextBox.Text == (string)Students[i])
+                test = Path.GetFileName(Students[i]);
+                if (InputTextBox.Text + ".json" == test)
                 {
-                    ReadJson(StudentFolderPath + "//" + Students[i], Students[i]);
+                    ReadJson(Students[i], InputTextBox.Text);
+                    return;
                 }
+
             }
-            
+            MessageBox.Show("User Does Not Exist!", "Input Error");
+
         }
         void ReadJson(string path, string studentID)
         {
             string[] FileContents = Array.Empty<string>();
-            StreamReader reader = new StreamReader(path);
+            string[] Event = new string[2];
+            int counter = 0;
 
-            FileContents = reader.ReadToEnd();
+            
+                FileContents = File.ReadAllLines(path);
+            for (int i = 0; i < Events.Length; i++)
+            {
+                Event = Events[i].Split("|");
+                if (Event[0] == comboBox1.SelectedItem.ToString())
+                {
+                    FileContents[2] = (int.Parse(FileContents[2]) + int.Parse(Event[1])).ToString();
+                    FileContents[3] += " " + Event[0];
+                }
+                File.WriteAllLines(path, FileContents);
+            }
         }
 
         private void AddButton_Click(object sender, EventArgs e)

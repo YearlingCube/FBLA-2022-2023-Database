@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GvEuZPwhW8tZkHd/kZjQZVWpSlGpD+da0NLfjX4XbsFjQVSzIR4CdHbe/EmW0ZM7PK/hmXqDs7kjK3B7a3VVgQ==",
+  "dgSpecHash": "mZLdpCJaMU95hfUy1Ej6s26PF9KAu5zaTG/ZJ8TsmxIYhZLKzkAydjX8V1e4IXmjPSTnA39K/N01/m1YUehGzA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\matho\\Documents\\Projects\\Database Comp. Tester\\Database Comp. Tester\\Database Comp. Tester.csproj",
+  "projectFilePath": "C:\\Users\\matho\\Documents\\GitHub\\FBLA-2022-2023-Database\\Database Comp. Tester\\Database Comp. Tester\\Database Comp. Tester.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matho\\.nuget\\packages\\system.json\\4.7.1\\system.json.4.7.1.nupkg.sha512"
   ],
