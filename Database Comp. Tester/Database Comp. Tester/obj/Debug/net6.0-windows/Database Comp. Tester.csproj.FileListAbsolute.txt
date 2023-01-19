@@ -36,3 +36,23 @@ C:\Users\matho\Documents\GitHub\FBLA-2022-2023-Database\Database Comp. Tester\Da
 C:\Users\matho\Documents\GitHub\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.pdb
 C:\Users\matho\Documents\GitHub\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.genruntimeconfig.cache
 C:\Users\matho\Documents\GitHub\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\ref\Database Comp. Tester.dll
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\bin\Debug\net6.0-windows\Database Comp. Tester.exe
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\bin\Debug\net6.0-windows\Database Comp. Tester.deps.json
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\bin\Debug\net6.0-windows\Database Comp. Tester.runtimeconfig.json
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\bin\Debug\net6.0-windows\Database Comp. Tester.dll
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\bin\Debug\net6.0-windows\Database Comp. Tester.pdb
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\bin\Debug\net6.0-windows\System.Json.dll
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.csproj.AssemblyReference.cache
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.csproj.GenerateResource.cache
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.AssemblyInfoInputs.cache
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.AssemblyInfo.cs
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.csproj.CoreCompileInputs.cache
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.csproj.CopyComplete
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.dll
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\refint\Database Comp. Tester.dll
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.pdb
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.genruntimeconfig.cache
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\ref\Database Comp. Tester.dll
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database_Comp._Tester.StudentEventTracker.resources
+C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database_Comp._Tester.Properties.Resources.resources

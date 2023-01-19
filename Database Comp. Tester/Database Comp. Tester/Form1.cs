@@ -6,23 +6,38 @@ using System.Text.Json;
 
 namespace Database_Comp._Tester
 {
-    public partial class Form1 : Form
+    public partial class StudentEventTracker : Form
     {
+
         string StudentFolderPath = Directory.GetCurrentDirectory() + "\\Students\\";
         string EventsPath = Directory.GetCurrentDirectory() + "\\Events.json";
         string[] Students = Array.Empty<string>();
         string[] Events = Array.Empty<string>();
 
         int DatabasePos = 0;
-        public Form1()
+        public StudentEventTracker()
         {
             InitializeComponent();
+        }
+        public void CheckInput()
+        {
+            if (InputTextBox1.TextLength > 0 && InputTextBox2.TextLength > 0 && InputTextBox3.TextLength > 0 && InputTextBox4.TextLength > 0 && InputTextBox5.TextLength > 0 && InputTextBox6.TextLength > 0)
+            {
+                AddButton.Enabled = true;
+                AddButton.BackColor = Color.Cyan;
+            }
+            else
+            {
+                AddButton.Enabled = false;
+                AddButton.BackColor = Color.Black;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Students = Directory.GetFiles(StudentFolderPath);
             OpenDatabase();
+
 
         }
         void OpenDatabase()
@@ -42,7 +57,6 @@ namespace Database_Comp._Tester
                 
             }
         }
-
         void CheckJson()
         {
             string test;
@@ -50,9 +64,9 @@ namespace Database_Comp._Tester
             for (int i = 0; i < Students.Length; i++)
             {
                 test = Path.GetFileName(Students[i]);
-                if (InputTextBox.Text + ".json" == test)
+                if (InputTextBox1.Text + ".json" == test)
                 {
-                    ReadJson(Students[i], InputTextBox.Text);
+                    ReadJson(Students[i], InputTextBox1.Text);
                     return;
                 }
 
@@ -84,5 +98,106 @@ namespace Database_Comp._Tester
         {
             CheckJson();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void MinimizeBox_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void InputTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void InputTextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            TextBox textBox = (TextBox)sender;
+            textBox.Focus();
+            switch (textBox.Name)
+            {
+
+                case "InputTextBox1":
+                    if (e.KeyChar == (char)Keys.Back)
+                    {
+                    }
+                    else
+                    { 
+                       if (char.IsDigit(e.KeyChar))
+                        {
+                            InputTextBox2.Focus();
+                        }  
+                    }
+                    break;
+                case "InputTextBox2":
+                    if (e.KeyChar == (char)Keys.Back && InputTextBox2.TextLength == 0)
+                    {
+                        InputTextBox1.Focus();
+                    }
+                    else
+                    {
+                        if (char.IsDigit(e.KeyChar))
+                        {
+                            InputTextBox3.Focus();
+                        }
+                    }
+                    break;
+                case "InputTextBox3":
+                    if (e.KeyChar == (char)Keys.Back && InputTextBox3.TextLength == 0)
+                    {
+                        InputTextBox2.Focus();
+                    }
+                    {
+                        if (char.IsDigit(e.KeyChar))
+                        {
+                            InputTextBox4.Focus();
+                        }
+                    }
+                    break;
+                case "InputTextBox4":
+                    if (e.KeyChar == (char)Keys.Back && InputTextBox4.TextLength == 0)
+                    {
+                        InputTextBox3.Focus();
+                    }
+                    {
+                        if (char.IsDigit(e.KeyChar))
+                        {
+                            InputTextBox5.Focus();
+                        }
+                    }
+                    break;
+                case "InputTextBox5":
+                    if (e.KeyChar == (char)Keys.Back && InputTextBox5.TextLength == 0)
+                    {
+                        InputTextBox4.Focus();
+                    }
+                    else
+                    {
+                        if (char.IsDigit(e.KeyChar))
+                        {
+                            InputTextBox6.Focus();
+                        }
+                    }
+                    break;
+                case "InputTextBox6":
+                    if (e.KeyChar == (char)Keys.Back && InputTextBox6.TextLength == 0)
+                    {
+                        InputTextBox5.Focus();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void InputTextBox1_TextChanged(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
