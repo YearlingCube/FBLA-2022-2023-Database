@@ -59,24 +59,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\clbel802\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\tbwit078\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\clbel802\\Documents\\FBLA-2022-2023-Database\\Database Comp. Tester\\Database Comp. Tester\\Database Comp. Tester.csproj",
+      "projectUniqueName": "C:\\Users\\tbwit078\\Documents\\GitKraken\\FBLA-2022-2023-Database\\Database Comp. Tester\\Database Comp. Tester\\Database Comp. Tester.csproj",
       "projectName": "Database Comp. Tester",
-      "projectPath": "C:\\Users\\clbel802\\Documents\\FBLA-2022-2023-Database\\Database Comp. Tester\\Database Comp. Tester\\Database Comp. Tester.csproj",
-      "packagesPath": "C:\\Users\\clbel802\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\clbel802\\Documents\\FBLA-2022-2023-Database\\Database Comp. Tester\\Database Comp. Tester\\obj\\",
+      "projectPath": "C:\\Users\\tbwit078\\Documents\\GitKraken\\FBLA-2022-2023-Database\\Database Comp. Tester\\Database Comp. Tester\\Database Comp. Tester.csproj",
+      "packagesPath": "C:\\Users\\tbwit078\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tbwit078\\Documents\\GitKraken\\FBLA-2022-2023-Database\\Database Comp. Tester\\Database Comp. Tester\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\clbel802\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\tbwit078\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

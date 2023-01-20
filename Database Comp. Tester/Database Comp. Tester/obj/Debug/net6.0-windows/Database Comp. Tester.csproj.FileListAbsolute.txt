@@ -56,3 +56,23 @@ C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Databa
 C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\ref\Database Comp. Tester.dll
 C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database_Comp._Tester.StudentEventTracker.resources
 C:\Users\clbel802\Documents\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database_Comp._Tester.Properties.Resources.resources
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\bin\Debug\net6.0-windows\Database Comp. Tester.exe
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\bin\Debug\net6.0-windows\Database Comp. Tester.deps.json
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\bin\Debug\net6.0-windows\Database Comp. Tester.runtimeconfig.json
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\bin\Debug\net6.0-windows\Database Comp. Tester.dll
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\bin\Debug\net6.0-windows\Database Comp. Tester.pdb
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\bin\Debug\net6.0-windows\System.Json.dll
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.csproj.AssemblyReference.cache
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database_Comp._Tester.StudentEventTracker.resources
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database_Comp._Tester.Properties.Resources.resources
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.csproj.GenerateResource.cache
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.AssemblyInfoInputs.cache
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.AssemblyInfo.cs
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.csproj.CoreCompileInputs.cache
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.csproj.CopyComplete
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.dll
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\refint\Database Comp. Tester.dll
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.pdb
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\Database Comp. Tester.genruntimeconfig.cache
+C:\Users\tbwit078\Documents\GitKraken\FBLA-2022-2023-Database\Database Comp. Tester\Database Comp. Tester\obj\Debug\net6.0-windows\ref\Database Comp. Tester.dll
