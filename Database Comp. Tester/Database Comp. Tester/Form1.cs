@@ -65,14 +65,15 @@ namespace Database_Comp._Tester
             for (int i = 0; i < Students.Length; i++)
             {
                 test = Path.GetFileName(Students[i]);
-                if (InputTextBox1.Text + ".json" == test)
+                if (m_password + ".json" == test)
                 {
-                    ReadJson(Students[i], InputTextBox1.Text);
+                    ReadJson(Students[i], m_password);
+                    MessageBox.Show("You did it!");
                     return;
                 }
 
             }
-            MessageBox.Show("User Does Not Exist!", "Input Error");
+            MessageBox.Show("User Does Not Exist! " + m_password, "Input Error"); ;
 
         }
         void ReadJson(string path, string studentID)
