@@ -13,6 +13,7 @@ namespace Database_Comp._Tester
         string EventsPath = Directory.GetCurrentDirectory() + "\\Events.json";
         string[] Students = Array.Empty<string>();
         string[] Events = Array.Empty<string>();
+        string m_password;
 
         int DatabasePos = 0;
         public StudentEventTracker()
@@ -64,14 +65,15 @@ namespace Database_Comp._Tester
             for (int i = 0; i < Students.Length; i++)
             {
                 test = Path.GetFileName(Students[i]);
-                if (InputTextBox1.Text + ".json" == test)
+                if (m_password + ".json" == test)
                 {
-                    ReadJson(Students[i], InputTextBox1.Text);
+                    ReadJson(Students[i], m_password);
+                    MessageBox.Show("You did it!");
                     return;
                 }
 
             }
-            MessageBox.Show("User Does Not Exist!", "Input Error");
+            MessageBox.Show("User Does Not Exist! " + m_password, "Input Error"); ;
 
         }
         void ReadJson(string path, string studentID)
@@ -124,12 +126,15 @@ namespace Database_Comp._Tester
                 case "InputTextBox1":
                     if (e.KeyChar == (char)Keys.Back)
                     {
+                        password();
                     }
                     else
                     { 
                        if (char.IsDigit(e.KeyChar))
                         {
                             InputTextBox2.Focus();
+                            password();
+                            passwordCheck();
                         }  
                     }
                     break;
@@ -137,12 +142,15 @@ namespace Database_Comp._Tester
                     if (e.KeyChar == (char)Keys.Back && InputTextBox2.TextLength == 0)
                     {
                         InputTextBox1.Focus();
+                        password();
                     }
                     else
                     {
                         if (char.IsDigit(e.KeyChar))
                         {
                             InputTextBox3.Focus();
+                            password();
+                            passwordCheck();
                         }
                     }
                     break;
@@ -150,11 +158,14 @@ namespace Database_Comp._Tester
                     if (e.KeyChar == (char)Keys.Back && InputTextBox3.TextLength == 0)
                     {
                         InputTextBox2.Focus();
+                        password();
                     }
                     {
                         if (char.IsDigit(e.KeyChar))
                         {
                             InputTextBox4.Focus();
+                            password();
+                            passwordCheck();
                         }
                     }
                     break;
@@ -162,11 +173,14 @@ namespace Database_Comp._Tester
                     if (e.KeyChar == (char)Keys.Back && InputTextBox4.TextLength == 0)
                     {
                         InputTextBox3.Focus();
+                        password();
                     }
                     {
                         if (char.IsDigit(e.KeyChar))
                         {
                             InputTextBox5.Focus();
+                            password();
+                            passwordCheck();
                         }
                     }
                     break;
@@ -174,12 +188,15 @@ namespace Database_Comp._Tester
                     if (e.KeyChar == (char)Keys.Back && InputTextBox5.TextLength == 0)
                     {
                         InputTextBox4.Focus();
+                        password();
                     }
                     else
                     {
                         if (char.IsDigit(e.KeyChar))
                         {
                             InputTextBox6.Focus();
+                            password();
+                            passwordCheck();
                         }
                     }
                     break;
@@ -187,17 +204,34 @@ namespace Database_Comp._Tester
                     if (e.KeyChar == (char)Keys.Back && InputTextBox6.TextLength == 0)
                     {
                         InputTextBox5.Focus();
+                        password();
+                    }
+                    else
+                    {
+                        if (char.IsDigit(e.KeyChar))
+                        {
+                            password();
+                            passwordCheck();
+                        }
                     }
                     break;
                 default:
                     break;
             }
         }
+        public String password()
+        {
+            m_password = InputTextBox1.Text + InputTextBox2.Text + InputTextBox3.Text + InputTextBox4.Text + InputTextBox5.Text + InputTextBox6.Text;
+            return m_password;
+        }
+        public void passwordCheck()
+        {
+            if (m_password.Length >= 6) { CheckJson(); }
+        }
 
         private void InputTextBox1_TextChanged(object? sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
-
     }
 }
