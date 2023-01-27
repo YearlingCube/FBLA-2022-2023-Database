@@ -41,9 +41,11 @@
             this.InputTextBox4 = new System.Windows.Forms.TextBox();
             this.InputTextBox5 = new System.Windows.Forms.TextBox();
             this.InputTextBox6 = new System.Windows.Forms.TextBox();
+            this.leaderboardDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leaderboardDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // InputTextBox1
@@ -186,11 +188,22 @@
             this.InputTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.InputTextBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputTextBox2_KeyPress);
             // 
+            // leaderboardDataGridView
+            // 
+            this.leaderboardDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.leaderboardDataGridView.Location = new System.Drawing.Point(335, 120);
+            this.leaderboardDataGridView.Name = "leaderboardDataGridView";
+            this.leaderboardDataGridView.RowHeadersWidth = 51;
+            this.leaderboardDataGridView.RowTemplate.Height = 29;
+            this.leaderboardDataGridView.Size = new System.Drawing.Size(453, 302);
+            this.leaderboardDataGridView.TabIndex = 19;
+            // 
             // StudentEventTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 451);
+            this.Controls.Add(this.leaderboardDataGridView);
             this.Controls.Add(this.InputTextBox6);
             this.Controls.Add(this.InputTextBox5);
             this.Controls.Add(this.InputTextBox4);
@@ -211,6 +224,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leaderboardDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +245,6 @@
         private TextBox InputTextBox4;
         private TextBox InputTextBox5;
         private TextBox InputTextBox6;
+        private DataGridView leaderboardDataGridView;
     }
 }

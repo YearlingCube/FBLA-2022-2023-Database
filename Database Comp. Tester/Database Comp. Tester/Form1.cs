@@ -38,7 +38,7 @@ namespace Database_Comp._Tester
         {
             Students = Directory.GetFiles(StudentFolderPath);
             OpenDatabase();
-
+            Leaderboard();
 
         }
         void OpenDatabase()
@@ -232,6 +232,23 @@ namespace Database_Comp._Tester
         private void InputTextBox1_TextChanged(object? sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        public void Leaderboard()
+        {
+            string[,] studentData = new string[3, 3] { {"Thomas", "50", "11" },{"Aaron", "37", "11" },{"Chris","1","12" } };
+            leaderboardDataGridView.ColumnCount = 3;
+            leaderboardDataGridView.Columns[0].Name = "Name";
+            leaderboardDataGridView.Columns[1].Name = "Points";
+            leaderboardDataGridView.Columns[2].Name = "Grade";
+            for (int i = 0; i < studentData.GetLength(0); i++)
+            {
+                leaderboardDataGridView.Rows.Add();
+                for (int j = 0; j < studentData.GetLength(1); j++)
+                {
+                    leaderboardDataGridView[j,i].Value = studentData[i, j];
+                }
+            }
         }
     }
 }
