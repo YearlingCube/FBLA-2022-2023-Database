@@ -193,6 +193,7 @@
             this.leaderboardDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.leaderboardDataGridView.Location = new System.Drawing.Point(335, 120);
             this.leaderboardDataGridView.Name = "leaderboardDataGridView";
+            this.leaderboardDataGridView.ReadOnly = true;
             this.leaderboardDataGridView.RowHeadersWidth = 51;
             this.leaderboardDataGridView.RowTemplate.Height = 29;
             this.leaderboardDataGridView.Size = new System.Drawing.Size(453, 302);

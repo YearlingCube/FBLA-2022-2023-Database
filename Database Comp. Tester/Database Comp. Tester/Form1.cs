@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.ComponentModel;
 using System.IO;
 using System.Json;
 using System.Text.Json;
@@ -78,21 +79,34 @@ namespace Database_Comp._Tester
         }
         void ReadJson(string path, string studentID)
         {
-            string[] FileContents = Array.Empty<string>();
+            string[] FileContents = new string[5];
+            string[] jsonContents = new string[4];
             string[] Event = new string[2];
             int counter = 0;
 
-            
-                FileContents = File.ReadAllLines(path);
+            // Read File
+            // Convert Json Lines Into Readable lines   
+            jsonContents = File.ReadAllLines(path);
+            for (int i = 0; i < 4; i++)
+            {
+                FileContents[i] = JsonSerializer.Deserialize<String>(jsonContents[i]);
+            }
+            //FileContents = File.ReadAllLines(path);
             for (int i = 0; i < Events.Length; i++)
             {
                 Event = Events[i].Split("|");
                 if (Event[0] == comboBox1.SelectedItem.ToString())
                 {
-                    FileContents[2] = (int.Parse(FileContents[2]) + int.Parse(Event[1])).ToString();
-                    FileContents[3] += " " + Event[0];
+                    FileContents[3] = (int.Parse(FileContents[2]) + int.Parse(Event[1])).ToString();
+                    FileContents[4] += " " + Event[0];
                 }
-                File.WriteAllLines(path, FileContents);
+                // Convert Normal Text Into Json Then Push To File
+                //string jsonString
+                for (int j = 0; j < 4; j++)
+                {
+                    jsonContents[j] = JsonSerializer.Serialize(FileContents[j]);
+                }
+                File.WriteAllLines(path, jsonContents);
             }
         }
 
@@ -248,6 +262,7 @@ namespace Database_Comp._Tester
                 {
                     leaderboardDataGridView[j,i].Value = studentData[i, j];
                 }
+                    leaderboardDataGridView.Sort(leaderboardDataGridView.Columns["Points"], ListSortDirection.Descending);
             }
         }
     }
