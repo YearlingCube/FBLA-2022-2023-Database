@@ -3,6 +3,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.IO;
 using System.Json;
+using System.Net.Http.Json;
 using System.Text.Json;
 
 namespace Database_Comp._Tester
@@ -15,6 +16,7 @@ namespace Database_Comp._Tester
         string[] Students = Array.Empty<string>();
         string[] Events = Array.Empty<string>();
         string m_password;
+        string[,] StudentInfo;
 
         int DatabasePos = 0;
         public StudentEventTracker()
@@ -38,6 +40,8 @@ namespace Database_Comp._Tester
         private void Form1_Load(object sender, EventArgs e)
         {
             Students = Directory.GetFiles(StudentFolderPath);
+            StudentInfo = new string[3, Students.Length];
+            GetStudentInfo();
             OpenDatabase();
             Leaderboard();
 
@@ -69,7 +73,7 @@ namespace Database_Comp._Tester
                 if (m_password + ".json" == test)
                 {
                     ReadJson(Students[i], m_password);
-                    MessageBox.Show("You did it!");
+                    MessageBox.Show("Points Redeemed!");
                     return;
                 }
 
@@ -87,7 +91,7 @@ namespace Database_Comp._Tester
             // Read File
             // Convert Json Lines Into Readable lines   
             jsonContents = File.ReadAllLines(path);
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 FileContents[i] = JsonSerializer.Deserialize<String>(jsonContents[i]);
             }
@@ -97,16 +101,36 @@ namespace Database_Comp._Tester
                 Event = Events[i].Split("|");
                 if (Event[0] == comboBox1.SelectedItem.ToString())
                 {
-                    FileContents[3] = (int.Parse(FileContents[2]) + int.Parse(Event[1])).ToString();
+                    FileContents[3] = (int.Parse(FileContents[3]) + int.Parse(Event[1])).ToString();
                     FileContents[4] += " " + Event[0];
                 }
                 // Convert Normal Text Into Json Then Push To File
                 //string jsonString
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < 5; j++)
                 {
                     jsonContents[j] = JsonSerializer.Serialize(FileContents[j]);
                 }
                 File.WriteAllLines(path, jsonContents);
+                GetStudentInfo();
+                Leaderboard();
+            }
+        }
+        void GetStudentInfo()
+        {
+            string[] FileContents = new string[5];
+            string[] jsonContents = new string[4];
+            // Read File
+            // Convert Json Lines Into Readable lines   
+            for (int i = 0; i < Students.Length; i++)
+            {
+                jsonContents = File.ReadAllLines(Students[i]);
+                for (int j = 0; j < 4; j++)
+                {
+                    FileContents[j] = JsonSerializer.Deserialize<String>(jsonContents[j]);
+                }
+                StudentInfo[i, 0] = FileContents[0];
+                StudentInfo[i, 2] = FileContents[1];
+                StudentInfo[i, 1] = FileContents[3];
             }
         }
 
@@ -250,20 +274,21 @@ namespace Database_Comp._Tester
 
         public void Leaderboard()
         {
-            string[,] studentData = new string[3, 3] { {"Thomas", "50", "11" },{"Aaron", "37", "11" },{"Chris","1","12" } };
+            //string[,] studentData = new string[3, 3] { {"Thomas", "50", "11" },{"Aaron", "37", "11" },{"Chris","1","12" } };
+
             leaderboardDataGridView.ColumnCount = 3;
             leaderboardDataGridView.Columns[0].Name = "Name";
             leaderboardDataGridView.Columns[1].Name = "Points";
             leaderboardDataGridView.Columns[2].Name = "Grade";
-            for (int i = 0; i < studentData.GetLength(0); i++)
+            for (int i = 0; i < StudentInfo.GetLength(0); i++)
             {
                 leaderboardDataGridView.Rows.Add();
-                for (int j = 0; j < studentData.GetLength(1); j++)
+                for (int j = 0; j < StudentInfo.GetLength(1); j++)
                 {
-                    leaderboardDataGridView[j,i].Value = studentData[i, j];
+                    leaderboardDataGridView[j,i].Value = StudentInfo[i, j];
                 }
-                    leaderboardDataGridView.Sort(leaderboardDataGridView.Columns["Points"], ListSortDirection.Descending);
             }
+                    leaderboardDataGridView.Sort(leaderboardDataGridView.Columns["Points"], ListSortDirection.Descending);
         }
     }
 }
