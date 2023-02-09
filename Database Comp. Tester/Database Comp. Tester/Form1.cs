@@ -11,7 +11,7 @@ namespace Database_Comp._Tester
     public partial class StudentEventTracker : Form
     {
 
-        string StudentFolderPath = Directory.GetCurrentDirectory() + "\\Students\\";
+        string StudentFolderPath = Directory.GetCurrentDirectory() + "\\IDS\\";
         string EventsPath = Directory.GetCurrentDirectory() + "\\Events.json";
         string[] Students = Array.Empty<string>();
         string[] Events = Array.Empty<string>();
@@ -40,7 +40,7 @@ namespace Database_Comp._Tester
         private void Form1_Load(object sender, EventArgs e)
         {
             Students = Directory.GetFiles(StudentFolderPath);
-            StudentInfo = new string[3, Students.Length];
+            StudentInfo = new string[Students.Length, 3];
             GetStudentInfo();
             OpenDatabase();
             Leaderboard();
@@ -70,10 +70,10 @@ namespace Database_Comp._Tester
             for (int i = 0; i < Students.Length; i++)
             {
                 test = Path.GetFileName(Students[i]);
+
                 if (m_password + ".json" == test)
                 {
                     ReadJson(Students[i], m_password);
-                    MessageBox.Show("Points Redeemed!");
                     return;
                 }
 
@@ -99,10 +99,15 @@ namespace Database_Comp._Tester
             for (int i = 0; i < Events.Length; i++)
             {
                 Event = Events[i].Split("|");
+                if (FileContents[4].Contains(Event[0]))
+                {
+                    MessageBox.Show("Student Has Already Been To Event!");
+                    return;
+                }
                 if (Event[0] == comboBox1.SelectedItem.ToString())
                 {
                     FileContents[3] = (int.Parse(FileContents[3]) + int.Parse(Event[1])).ToString();
-                    FileContents[4] += " " + Event[0];
+                        FileContents[4] += " " + Event[0];
                 }
                 // Convert Normal Text Into Json Then Push To File
                 //string jsonString
@@ -113,6 +118,7 @@ namespace Database_Comp._Tester
                 File.WriteAllLines(path, jsonContents);
                 GetStudentInfo();
                 Leaderboard();
+                MessageBox.Show("Points Redeemed!");
             }
         }
         void GetStudentInfo()
@@ -275,20 +281,42 @@ namespace Database_Comp._Tester
         public void Leaderboard()
         {
             //string[,] studentData = new string[3, 3] { {"Thomas", "50", "11" },{"Aaron", "37", "11" },{"Chris","1","12" } };
-
+            leaderboardDataGridView.Rows.Clear();
             leaderboardDataGridView.ColumnCount = 3;
             leaderboardDataGridView.Columns[0].Name = "Name";
+            leaderboardDataGridView.Columns[0].SortMode = DataGridViewColumnSortMode.Programmatic;
             leaderboardDataGridView.Columns[1].Name = "Points";
+            leaderboardDataGridView.Columns[1].SortMode = DataGridViewColumnSortMode.Programmatic;
             leaderboardDataGridView.Columns[2].Name = "Grade";
+            leaderboardDataGridView.Columns[2].SortMode = DataGridViewColumnSortMode.Programmatic;
+
+            int studentPoints = 0;
             for (int i = 0; i < StudentInfo.GetLength(0); i++)
             {
                 leaderboardDataGridView.Rows.Add();
                 for (int j = 0; j < StudentInfo.GetLength(1); j++)
                 {
-                    leaderboardDataGridView[j,i].Value = StudentInfo[i, j];
+                    if (int.TryParse(StudentInfo[i, j], out studentPoints))
+                    {
+                        leaderboardDataGridView[j,i].Value = int.Parse(StudentInfo[i, j]);
+
+                    }
+                    else
+                    {
+                        leaderboardDataGridView[j,i].Value = StudentInfo[i,j];
+                    }
+
                 }
             }
-                    leaderboardDataGridView.Sort(leaderboardDataGridView.Columns["Points"], ListSortDirection.Descending);
+            leaderboardDataGridView.Sort(leaderboardDataGridView.Columns["Points"], ListSortDirection.Descending);
+        }
+
+        private void DrawRandomBtn_Click(object sender, EventArgs e)
+        {
+            Random r = new Random();
+            int RandomNumber;
+            RandomNumber = r.Next(0, StudentInfo.Length/3);
+            MessageBox.Show("Student's Name : " + StudentInfo[RandomNumber,0] + "\nStudent's Grade : " + StudentInfo[RandomNumber,2]);
         }
     }
 }
