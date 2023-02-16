@@ -19,23 +19,24 @@ namespace Database_Comp._Tester
         string[,] StudentInfo;
 
         int DatabasePos = 0;
-        public StudentEventTracker()
+        public StudentEventTracker(string password)
         {
             InitializeComponent();
+            m_password = password;
         }
-        public void CheckInput()
-        {
-            if (InputTextBox1.TextLength > 0 && InputTextBox2.TextLength > 0 && InputTextBox3.TextLength > 0 && InputTextBox4.TextLength > 0 && InputTextBox5.TextLength > 0 && InputTextBox6.TextLength > 0)
-            {
-                AddButton.Enabled = true;
-                AddButton.BackColor = Color.Cyan;
-            }
-            else
-            {
-                AddButton.Enabled = false;
-                AddButton.BackColor = Color.Black;
-            }
-        }
+        //public void CheckInput()
+        //{
+        //    if (InputTextBox1.TextLength > 0 && InputTextBox2.TextLength > 0 && InputTextBox3.TextLength > 0 && InputTextBox4.TextLength > 0 && InputTextBox5.TextLength > 0 && InputTextBox6.TextLength > 0)
+        //    {
+        //        AddButton.Enabled = true;
+        //        AddButton.BackColor = Color.Cyan;
+        //    }
+        //    else
+        //    {
+        //        AddButton.Enabled = false;
+        //        AddButton.BackColor = Color.Black;
+        //    }
+        //}
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -154,129 +155,6 @@ namespace Database_Comp._Tester
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        private void InputTextBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
-        private void InputTextBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-            TextBox textBox = (TextBox)sender;
-            textBox.Focus();
-            switch (textBox.Name)
-            {
-
-                case "InputTextBox1":
-                    if (e.KeyChar == (char)Keys.Back)
-                    {
-                        password();
-                    }
-                    else
-                    { 
-                       if (char.IsDigit(e.KeyChar))
-                        {
-                            InputTextBox2.Focus();
-                            password();
-                            passwordCheck();
-                        }  
-                    }
-                    break;
-                case "InputTextBox2":
-                    if (e.KeyChar == (char)Keys.Back && InputTextBox2.TextLength == 0)
-                    {
-                        InputTextBox1.Focus();
-                        password();
-                    }
-                    else
-                    {
-                        if (char.IsDigit(e.KeyChar))
-                        {
-                            InputTextBox3.Focus();
-                            password();
-                            passwordCheck();
-                        }
-                    }
-                    break;
-                case "InputTextBox3":
-                    if (e.KeyChar == (char)Keys.Back && InputTextBox3.TextLength == 0)
-                    {
-                        InputTextBox2.Focus();
-                        password();
-                    }
-                    {
-                        if (char.IsDigit(e.KeyChar))
-                        {
-                            InputTextBox4.Focus();
-                            password();
-                            passwordCheck();
-                        }
-                    }
-                    break;
-                case "InputTextBox4":
-                    if (e.KeyChar == (char)Keys.Back && InputTextBox4.TextLength == 0)
-                    {
-                        InputTextBox3.Focus();
-                        password();
-                    }
-                    {
-                        if (char.IsDigit(e.KeyChar))
-                        {
-                            InputTextBox5.Focus();
-                            password();
-                            passwordCheck();
-                        }
-                    }
-                    break;
-                case "InputTextBox5":
-                    if (e.KeyChar == (char)Keys.Back && InputTextBox5.TextLength == 0)
-                    {
-                        InputTextBox4.Focus();
-                        password();
-                    }
-                    else
-                    {
-                        if (char.IsDigit(e.KeyChar))
-                        {
-                            InputTextBox6.Focus();
-                            password();
-                            passwordCheck();
-                        }
-                    }
-                    break;
-                case "InputTextBox6":
-                    if (e.KeyChar == (char)Keys.Back && InputTextBox6.TextLength == 0)
-                    {
-                        InputTextBox5.Focus();
-                        password();
-                    }
-                    else
-                    {
-                        if (char.IsDigit(e.KeyChar))
-                        {
-                            password();
-                            passwordCheck();
-                        }
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
-        public String password()
-        {
-            m_password = InputTextBox1.Text + InputTextBox2.Text + InputTextBox3.Text + InputTextBox4.Text + InputTextBox5.Text + InputTextBox6.Text;
-            return m_password;
-        }
-        public void passwordCheck()
-        {
-            if (m_password.Length >= 6) { CheckJson(); }
-        }
-
-        private void InputTextBox1_TextChanged(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         public void Leaderboard()
         {
@@ -311,12 +189,12 @@ namespace Database_Comp._Tester
             leaderboardDataGridView.Sort(leaderboardDataGridView.Columns["Points"], ListSortDirection.Descending);
         }
 
-        private void DrawRandomBtn_Click(object sender, EventArgs e)
+        private void returnButton_Click(object sender, EventArgs e)
         {
-            Random r = new Random();
-            int RandomNumber;
-            RandomNumber = r.Next(0, StudentInfo.Length/3);
-            MessageBox.Show("Student's Name : " + StudentInfo[RandomNumber,0] + "\nStudent's Grade : " + StudentInfo[RandomNumber,2]);
+            Login l = new Login();
+            this.Hide();
+            l.ShowDialog();
+            this.Close();
         }
     }
 }
