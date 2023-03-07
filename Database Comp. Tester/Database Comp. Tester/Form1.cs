@@ -61,7 +61,7 @@ namespace Database_Comp._Tester
                     comboBox1.Items.Add(Event[0]);
                 }
                 reader.Close();
-                
+
             }
         }
         void CheckJson()
@@ -98,28 +98,28 @@ namespace Database_Comp._Tester
             }
             //FileContents = File.ReadAllLines(path);
 
-                int index = Array.FindIndex(Events, row => row.Contains(comboBox1.Text));
-                Event = Events[index].Split("|");
-                if (FileContents[4].Contains(Event[0]))
-                {
-                    MessageBox.Show("Student Has Already Been To Event!");
-                    return;
-                }
-                if (Event[0] == comboBox1.SelectedItem.ToString())
-                {
-                    FileContents[3] = (int.Parse(FileContents[3]) + int.Parse(Event[1])).ToString();
-                    FileContents[4] += " " + Event[0];
-                }
-                // Convert Normal Text Into Json Then Push To File
-                //string jsonString
-                for (int j = 0; j < 5; j++)
-                {
-                    jsonContents[j] = JsonSerializer.Serialize(FileContents[j]);
-                }
-                File.WriteAllLines(path, jsonContents);
-                GetStudentInfo();
-                Leaderboard();
-                MessageBox.Show("Points Redeemed!");
+            int index = Array.FindIndex(Events, row => row.Contains(comboBox1.Text));
+            Event = Events[index].Split("|");
+            if (FileContents[4].Contains(Event[0]))
+            {
+                MessageBox.Show("Student Has Already Been To Event!");
+                return;
+            }
+            if (Event[0] == comboBox1.SelectedItem.ToString())
+            {
+                FileContents[3] = (int.Parse(FileContents[3]) + int.Parse(Event[1])).ToString();
+                FileContents[4] += " " + Event[0];
+            }
+            // Convert Normal Text Into Json Then Push To File
+            //string jsonString
+            for (int j = 0; j < 5; j++)
+            {
+                jsonContents[j] = JsonSerializer.Serialize(FileContents[j]);
+            }
+            File.WriteAllLines(path, jsonContents);
+            GetStudentInfo();
+            Leaderboard();
+            MessageBox.Show("Points Redeemed!");
         }
         void GetStudentInfo()
         {
@@ -173,12 +173,12 @@ namespace Database_Comp._Tester
                 {
                     if (int.TryParse(StudentInfo[i, j], out studentPoints))
                     {
-                        leaderboardDataGridView[j,i].Value = int.Parse(StudentInfo[i, j]);
+                        leaderboardDataGridView[j, i].Value = int.Parse(StudentInfo[i, j]);
 
                     }
                     else
                     {
-                        leaderboardDataGridView[j,i].Value = StudentInfo[i,j];
+                        leaderboardDataGridView[j, i].Value = StudentInfo[i, j];
                     }
 
                 }

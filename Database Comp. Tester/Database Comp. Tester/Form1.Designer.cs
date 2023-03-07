@@ -28,119 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AddButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.MinimizeBox = new System.Windows.Forms.PictureBox();
-            this.ExitBox = new System.Windows.Forms.PictureBox();
-            this.leaderboardDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.returnButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.MinimizeBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leaderboardDataGridView)).BeginInit();
-            this.SuspendLayout();
+            AddButton = new Button();
+            comboBox1 = new ComboBox();
+            MinimizeBox = new PictureBox();
+            ExitBox = new PictureBox();
+            leaderboardDataGridView = new DataGridView();
+            label1 = new Label();
+            returnButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)MinimizeBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ExitBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)leaderboardDataGridView).BeginInit();
+            SuspendLayout();
             // 
             // AddButton
             // 
-            this.AddButton.BackColor = System.Drawing.SystemColors.Control;
-            this.AddButton.Location = new System.Drawing.Point(169, 12);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(94, 29);
-            this.AddButton.TabIndex = 2;
-            this.AddButton.Text = "Add To File";
-            this.AddButton.UseVisualStyleBackColor = false;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            AddButton.BackColor = SystemColors.Control;
+            AddButton.Location = new Point(169, 12);
+            AddButton.Name = "AddButton";
+            AddButton.Size = new Size(94, 29);
+            AddButton.TabIndex = 2;
+            AddButton.Text = "Add To File";
+            AddButton.UseVisualStyleBackColor = false;
+            AddButton.Click += AddButton_Click;
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 8;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(12, 12);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 8;
             // 
             // MinimizeBox
             // 
-            this.MinimizeBox.Image = global::Database_Comp._Tester.Properties.Resources._1744044;
-            this.MinimizeBox.Location = new System.Drawing.Point(377, 10);
-            this.MinimizeBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MinimizeBox.Name = "MinimizeBox";
-            this.MinimizeBox.Size = new System.Drawing.Size(30, 30);
-            this.MinimizeBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.MinimizeBox.TabIndex = 11;
-            this.MinimizeBox.TabStop = false;
-            this.MinimizeBox.Click += new System.EventHandler(this.MinimizeBox_Click);
+            MinimizeBox.Image = Properties.Resources._1744044;
+            MinimizeBox.Location = new Point(377, 10);
+            MinimizeBox.Margin = new Padding(3, 4, 3, 4);
+            MinimizeBox.Name = "MinimizeBox";
+            MinimizeBox.Size = new Size(30, 30);
+            MinimizeBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            MinimizeBox.TabIndex = 11;
+            MinimizeBox.TabStop = false;
+            MinimizeBox.Click += MinimizeBox_Click;
             // 
             // ExitBox
             // 
-            this.ExitBox.Image = global::Database_Comp._Tester.Properties.Resources.img_211963;
-            this.ExitBox.Location = new System.Drawing.Point(411, 10);
-            this.ExitBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ExitBox.Name = "ExitBox";
-            this.ExitBox.Size = new System.Drawing.Size(30, 30);
-            this.ExitBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ExitBox.TabIndex = 12;
-            this.ExitBox.TabStop = false;
-            this.ExitBox.Click += new System.EventHandler(this.pictureBox2_Click);
+            ExitBox.Image = Properties.Resources.img_211963;
+            ExitBox.Location = new Point(411, 10);
+            ExitBox.Margin = new Padding(3, 4, 3, 4);
+            ExitBox.Name = "ExitBox";
+            ExitBox.Size = new Size(30, 30);
+            ExitBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            ExitBox.TabIndex = 12;
+            ExitBox.TabStop = false;
+            ExitBox.Click += pictureBox2_Click;
             // 
             // leaderboardDataGridView
             // 
-            this.leaderboardDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.leaderboardDataGridView.Location = new System.Drawing.Point(12, 81);
-            this.leaderboardDataGridView.Name = "leaderboardDataGridView";
-            this.leaderboardDataGridView.ReadOnly = true;
-            this.leaderboardDataGridView.RowHeadersWidth = 51;
-            this.leaderboardDataGridView.RowTemplate.Height = 29;
-            this.leaderboardDataGridView.ShowCellErrors = false;
-            this.leaderboardDataGridView.ShowCellToolTips = false;
-            this.leaderboardDataGridView.ShowEditingIcon = false;
-            this.leaderboardDataGridView.ShowRowErrors = false;
-            this.leaderboardDataGridView.Size = new System.Drawing.Size(429, 302);
-            this.leaderboardDataGridView.TabIndex = 19;
+            leaderboardDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            leaderboardDataGridView.Location = new Point(12, 81);
+            leaderboardDataGridView.Name = "leaderboardDataGridView";
+            leaderboardDataGridView.ReadOnly = true;
+            leaderboardDataGridView.RowHeadersWidth = 51;
+            leaderboardDataGridView.RowTemplate.Height = 29;
+            leaderboardDataGridView.ShowCellErrors = false;
+            leaderboardDataGridView.ShowCellToolTips = false;
+            leaderboardDataGridView.ShowEditingIcon = false;
+            leaderboardDataGridView.ShowRowErrors = false;
+            leaderboardDataGridView.Size = new Size(429, 302);
+            leaderboardDataGridView.TabIndex = 19;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(24, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(410, 31);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "$50 Chipotle Gift Card Leaderboard : ";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(24, 47);
+            label1.Name = "label1";
+            label1.Size = new Size(410, 31);
+            label1.TabIndex = 21;
+            label1.Text = "$50 Chipotle Gift Card Leaderboard : ";
             // 
             // returnButton
             // 
-            this.returnButton.Location = new System.Drawing.Point(269, 12);
-            this.returnButton.Name = "returnButton";
-            this.returnButton.Size = new System.Drawing.Size(94, 29);
-            this.returnButton.TabIndex = 22;
-            this.returnButton.Text = "Return";
-            this.returnButton.UseVisualStyleBackColor = true;
-            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
+            returnButton.Location = new Point(269, 12);
+            returnButton.Name = "returnButton";
+            returnButton.Size = new Size(94, 29);
+            returnButton.TabIndex = 22;
+            returnButton.Text = "Return";
+            returnButton.UseVisualStyleBackColor = true;
+            returnButton.Click += returnButton_Click;
             // 
             // StudentEventTracker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 398);
-            this.ControlBox = false;
-            this.Controls.Add(this.returnButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.leaderboardDataGridView);
-            this.Controls.Add(this.ExitBox);
-            this.Controls.Add(this.MinimizeBox);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.AddButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "StudentEventTracker";
-            this.Text = "Student Form";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.MinimizeBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leaderboardDataGridView)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(456, 398);
+            ControlBox = false;
+            Controls.Add(returnButton);
+            Controls.Add(label1);
+            Controls.Add(leaderboardDataGridView);
+            Controls.Add(ExitBox);
+            Controls.Add(MinimizeBox);
+            Controls.Add(comboBox1);
+            Controls.Add(AddButton);
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            Name = "StudentEventTracker";
+            Text = "Student Form";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)MinimizeBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ExitBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)leaderboardDataGridView).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

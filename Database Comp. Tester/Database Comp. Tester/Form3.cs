@@ -98,6 +98,7 @@ namespace Database_Comp._Tester
                 }
             }
             leaderboardDataGridView.Sort(leaderboardDataGridView.Columns["Points"], ListSortDirection.Descending);
+            leaderboardDataGridView.ClearSelection();
         }
 
         private void DrawRandomBtn_Click(object sender, EventArgs e)
