@@ -97,9 +97,9 @@ namespace Database_Comp._Tester
                 FileContents[i] = JsonSerializer.Deserialize<String>(jsonContents[i]);
             }
             //FileContents = File.ReadAllLines(path);
-            for (int i = 0; i < Events.Length; i++)
-            {
-                Event = Events[i].Split("|");
+
+                int index = Array.FindIndex(Events, row => row.Contains(comboBox1.Text));
+                Event = Events[index].Split("|");
                 if (FileContents[4].Contains(Event[0]))
                 {
                     MessageBox.Show("Student Has Already Been To Event!");
@@ -108,7 +108,7 @@ namespace Database_Comp._Tester
                 if (Event[0] == comboBox1.SelectedItem.ToString())
                 {
                     FileContents[3] = (int.Parse(FileContents[3]) + int.Parse(Event[1])).ToString();
-                        FileContents[4] += " " + Event[0];
+                    FileContents[4] += " " + Event[0];
                 }
                 // Convert Normal Text Into Json Then Push To File
                 //string jsonString
@@ -120,7 +120,6 @@ namespace Database_Comp._Tester
                 GetStudentInfo();
                 Leaderboard();
                 MessageBox.Show("Points Redeemed!");
-            }
         }
         void GetStudentInfo()
         {
@@ -164,9 +163,7 @@ namespace Database_Comp._Tester
             leaderboardDataGridView.Columns[0].Name = "Name";
             leaderboardDataGridView.Columns[0].SortMode = DataGridViewColumnSortMode.Programmatic;
             leaderboardDataGridView.Columns[1].Name = "Points";
-            leaderboardDataGridView.Columns[1].SortMode = DataGridViewColumnSortMode.Programmatic;
             leaderboardDataGridView.Columns[2].Name = "Grade";
-            leaderboardDataGridView.Columns[2].SortMode = DataGridViewColumnSortMode.Programmatic;
 
             int studentPoints = 0;
             for (int i = 0; i < StudentInfo.GetLength(0); i++)
@@ -187,6 +184,7 @@ namespace Database_Comp._Tester
                 }
             }
             leaderboardDataGridView.Sort(leaderboardDataGridView.Columns["Points"], ListSortDirection.Descending);
+            leaderboardDataGridView.ClearSelection();
         }
 
         private void returnButton_Click(object sender, EventArgs e)

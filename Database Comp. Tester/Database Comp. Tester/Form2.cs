@@ -63,24 +63,24 @@ namespace Database_Comp._Tester
                 }
 
             }
+            MessageBox.Show("User Does Not Exist! " + m_password, "Input Error"); ;
             return false;
-            //MessageBox.Show("User Does Not Exist! " + m_password, "Input Error"); ;
 
         }
         private void enterButton_Click(object sender, EventArgs e)
         {
-            if (CheckJson())
-            {
-                StudentEventTracker s = new StudentEventTracker(m_password);
-                this.Hide();
-                s.ShowDialog();
-                this.Close();
-            }
-            else if(m_password == "123456")
+            
+            if(m_password == "123456")
             {
                 Admin a = new Admin();
                 this.Hide();
                 a.ShowDialog();
+                this.Close();
+            }else if (CheckJson())
+            {
+                StudentEventTracker s = new StudentEventTracker(m_password);
+                this.Hide();
+                s.ShowDialog();
                 this.Close();
             }
         }
@@ -140,7 +140,6 @@ namespace Database_Comp._Tester
                         {
                             InputTextBox2.Focus();
                             password();
-                            passwordCheck();
                         }
                     }
                     break;
@@ -156,7 +155,6 @@ namespace Database_Comp._Tester
                         {
                             InputTextBox3.Focus();
                             password();
-                            passwordCheck();
                         }
                     }
                     break;
@@ -171,7 +169,6 @@ namespace Database_Comp._Tester
                         {
                             InputTextBox4.Focus();
                             password();
-                            passwordCheck();
                         }
                     }
                     break;
@@ -186,7 +183,6 @@ namespace Database_Comp._Tester
                         {
                             InputTextBox5.Focus();
                             password();
-                            passwordCheck();
                         }
                     }
                     break;
@@ -202,7 +198,6 @@ namespace Database_Comp._Tester
                         {
                             InputTextBox6.Focus();
                             password();
-                            passwordCheck();
                         }
                     }
                     break;
@@ -218,7 +213,6 @@ namespace Database_Comp._Tester
                         {
                             enterButton.Focus();
                             password();
-                            passwordCheck();
                         }
                     }
                     break;
@@ -244,8 +238,16 @@ namespace Database_Comp._Tester
         private void InputTextBox6_TextChanged(object sender, EventArgs e)
         {
             password();
-            passwordCheck();
         }
 
+        private void ExitBox_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void MinimizeBox_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

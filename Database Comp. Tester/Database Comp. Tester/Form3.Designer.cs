@@ -32,7 +32,11 @@
             this.DrawRandomBtn = new System.Windows.Forms.Button();
             this.leaderboardDataGridView = new System.Windows.Forms.DataGridView();
             this.returnButton = new System.Windows.Forms.Button();
+            this.ExitBox = new System.Windows.Forms.PictureBox();
+            this.MinimizeBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.leaderboardDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimizeBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,11 +51,11 @@
             // 
             // DrawRandomBtn
             // 
-            this.DrawRandomBtn.Location = new System.Drawing.Point(12, 12);
+            this.DrawRandomBtn.Location = new System.Drawing.Point(104, 12);
             this.DrawRandomBtn.Name = "DrawRandomBtn";
-            this.DrawRandomBtn.Size = new System.Drawing.Size(167, 29);
+            this.DrawRandomBtn.Size = new System.Drawing.Size(119, 29);
             this.DrawRandomBtn.TabIndex = 23;
-            this.DrawRandomBtn.Text = "Draw Random Student";
+            this.DrawRandomBtn.Text = "Draw Winners";
             this.DrawRandomBtn.UseVisualStyleBackColor = true;
             this.DrawRandomBtn.Click += new System.EventHandler(this.DrawRandomBtn_Click);
             // 
@@ -68,7 +72,7 @@
             // 
             // returnButton
             // 
-            this.returnButton.Location = new System.Drawing.Point(195, 12);
+            this.returnButton.Location = new System.Drawing.Point(245, 12);
             this.returnButton.Name = "returnButton";
             this.returnButton.Size = new System.Drawing.Size(94, 29);
             this.returnButton.TabIndex = 25;
@@ -76,18 +80,48 @@
             this.returnButton.UseVisualStyleBackColor = true;
             this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
+            // ExitBox
+            // 
+            this.ExitBox.Image = global::Database_Comp._Tester.Properties.Resources.img_211963;
+            this.ExitBox.Location = new System.Drawing.Point(417, 11);
+            this.ExitBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ExitBox.Name = "ExitBox";
+            this.ExitBox.Size = new System.Drawing.Size(30, 30);
+            this.ExitBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ExitBox.TabIndex = 27;
+            this.ExitBox.TabStop = false;
+            this.ExitBox.Click += new System.EventHandler(this.ExitBox_Click);
+            // 
+            // MinimizeBox
+            // 
+            this.MinimizeBox.Image = global::Database_Comp._Tester.Properties.Resources._1744044;
+            this.MinimizeBox.Location = new System.Drawing.Point(383, 11);
+            this.MinimizeBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MinimizeBox.Name = "MinimizeBox";
+            this.MinimizeBox.Size = new System.Drawing.Size(30, 30);
+            this.MinimizeBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MinimizeBox.TabIndex = 26;
+            this.MinimizeBox.TabStop = false;
+            this.MinimizeBox.Click += new System.EventHandler(this.MinimizeBox_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 401);
+            this.ControlBox = false;
+            this.Controls.Add(this.ExitBox);
+            this.Controls.Add(this.MinimizeBox);
             this.Controls.Add(this.returnButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DrawRandomBtn);
             this.Controls.Add(this.leaderboardDataGridView);
             this.Name = "Admin";
+            this.Text = "Admin Form";
             this.Load += new System.EventHandler(this.Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.leaderboardDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimizeBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +133,7 @@
         private Button DrawRandomBtn;
         private DataGridView leaderboardDataGridView;
         private Button returnButton;
+        private PictureBox ExitBox;
+        private PictureBox MinimizeBox;
     }
 }

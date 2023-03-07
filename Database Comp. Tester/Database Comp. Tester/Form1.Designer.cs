@@ -91,6 +91,10 @@
             this.leaderboardDataGridView.ReadOnly = true;
             this.leaderboardDataGridView.RowHeadersWidth = 51;
             this.leaderboardDataGridView.RowTemplate.Height = 29;
+            this.leaderboardDataGridView.ShowCellErrors = false;
+            this.leaderboardDataGridView.ShowCellToolTips = false;
+            this.leaderboardDataGridView.ShowEditingIcon = false;
+            this.leaderboardDataGridView.ShowRowErrors = false;
             this.leaderboardDataGridView.Size = new System.Drawing.Size(429, 302);
             this.leaderboardDataGridView.TabIndex = 19;
             // 
@@ -119,6 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 398);
+            this.ControlBox = false;
             this.Controls.Add(this.returnButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.leaderboardDataGridView);
@@ -126,9 +131,9 @@
             this.Controls.Add(this.MinimizeBox);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.AddButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "StudentEventTracker";
-            this.Text = "ack";
+            this.Text = "Student Form";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).EndInit();

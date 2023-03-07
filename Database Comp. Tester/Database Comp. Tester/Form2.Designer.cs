@@ -36,14 +36,18 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.InputTextBox1 = new System.Windows.Forms.TextBox();
             this.enterButton = new System.Windows.Forms.Button();
+            this.ExitBox = new System.Windows.Forms.PictureBox();
+            this.MinimizeBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimizeBox)).BeginInit();
             this.SuspendLayout();
             // 
             // InputTextBox6
             // 
             this.InputTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.InputTextBox6.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.InputTextBox6.Location = new System.Drawing.Point(284, 77);
+            this.InputTextBox6.Location = new System.Drawing.Point(282, 119);
             this.InputTextBox6.MaxLength = 1;
             this.InputTextBox6.Name = "InputTextBox6";
             this.InputTextBox6.Size = new System.Drawing.Size(45, 70);
@@ -56,7 +60,7 @@
             // 
             this.InputTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.InputTextBox5.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.InputTextBox5.Location = new System.Drawing.Point(233, 77);
+            this.InputTextBox5.Location = new System.Drawing.Point(231, 119);
             this.InputTextBox5.MaxLength = 1;
             this.InputTextBox5.Name = "InputTextBox5";
             this.InputTextBox5.Size = new System.Drawing.Size(45, 70);
@@ -69,7 +73,7 @@
             // 
             this.InputTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.InputTextBox4.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.InputTextBox4.Location = new System.Drawing.Point(182, 77);
+            this.InputTextBox4.Location = new System.Drawing.Point(180, 119);
             this.InputTextBox4.MaxLength = 1;
             this.InputTextBox4.Name = "InputTextBox4";
             this.InputTextBox4.Size = new System.Drawing.Size(45, 70);
@@ -82,7 +86,7 @@
             // 
             this.InputTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.InputTextBox3.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.InputTextBox3.Location = new System.Drawing.Point(131, 77);
+            this.InputTextBox3.Location = new System.Drawing.Point(129, 119);
             this.InputTextBox3.MaxLength = 1;
             this.InputTextBox3.Name = "InputTextBox3";
             this.InputTextBox3.Size = new System.Drawing.Size(45, 70);
@@ -95,7 +99,7 @@
             // 
             this.InputTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.InputTextBox2.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.InputTextBox2.Location = new System.Drawing.Point(80, 77);
+            this.InputTextBox2.Location = new System.Drawing.Point(78, 119);
             this.InputTextBox2.MaxLength = 1;
             this.InputTextBox2.Name = "InputTextBox2";
             this.InputTextBox2.Size = new System.Drawing.Size(45, 70);
@@ -107,7 +111,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Database_Comp._Tester.Properties.Resources.generatedtext;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 54);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(501, 53);
             this.pictureBox1.TabIndex = 22;
@@ -117,7 +121,7 @@
             // 
             this.InputTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.InputTextBox1.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.InputTextBox1.Location = new System.Drawing.Point(29, 77);
+            this.InputTextBox1.Location = new System.Drawing.Point(27, 119);
             this.InputTextBox1.MaxLength = 1;
             this.InputTextBox1.Name = "InputTextBox1";
             this.InputTextBox1.Size = new System.Drawing.Size(45, 70);
@@ -128,7 +132,7 @@
             // 
             // enterButton
             // 
-            this.enterButton.Location = new System.Drawing.Point(335, 77);
+            this.enterButton.Location = new System.Drawing.Point(333, 119);
             this.enterButton.Name = "enterButton";
             this.enterButton.Size = new System.Drawing.Size(178, 70);
             this.enterButton.TabIndex = 28;
@@ -136,11 +140,38 @@
             this.enterButton.UseVisualStyleBackColor = true;
             this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
             // 
+            // ExitBox
+            // 
+            this.ExitBox.Image = global::Database_Comp._Tester.Properties.Resources.img_211963;
+            this.ExitBox.Location = new System.Drawing.Point(481, 13);
+            this.ExitBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ExitBox.Name = "ExitBox";
+            this.ExitBox.Size = new System.Drawing.Size(30, 30);
+            this.ExitBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ExitBox.TabIndex = 30;
+            this.ExitBox.TabStop = false;
+            this.ExitBox.Click += new System.EventHandler(this.ExitBox_Click);
+            // 
+            // MinimizeBox
+            // 
+            this.MinimizeBox.Image = global::Database_Comp._Tester.Properties.Resources._1744044;
+            this.MinimizeBox.Location = new System.Drawing.Point(447, 13);
+            this.MinimizeBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MinimizeBox.Name = "MinimizeBox";
+            this.MinimizeBox.Size = new System.Drawing.Size(30, 30);
+            this.MinimizeBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MinimizeBox.TabIndex = 29;
+            this.MinimizeBox.TabStop = false;
+            this.MinimizeBox.Click += new System.EventHandler(this.MinimizeBox_Click_1);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 166);
+            this.ClientSize = new System.Drawing.Size(523, 200);
+            this.ControlBox = false;
+            this.Controls.Add(this.ExitBox);
+            this.Controls.Add(this.MinimizeBox);
             this.Controls.Add(this.enterButton);
             this.Controls.Add(this.InputTextBox6);
             this.Controls.Add(this.InputTextBox5);
@@ -150,8 +181,11 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.InputTextBox1);
             this.Name = "Login";
+            this.Text = "Sign In Form";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimizeBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +201,7 @@
         private PictureBox pictureBox1;
         private TextBox InputTextBox1;
         private Button enterButton;
+        private PictureBox ExitBox;
+        private PictureBox MinimizeBox;
     }
 }
