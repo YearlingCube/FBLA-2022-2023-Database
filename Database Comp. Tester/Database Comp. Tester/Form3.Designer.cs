@@ -51,16 +51,19 @@
             // 
             // DrawRandomBtn
             // 
-            this.DrawRandomBtn.Location = new System.Drawing.Point(104, 12);
+            this.DrawRandomBtn.BackColor = System.Drawing.Color.Gainsboro;
+            this.DrawRandomBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DrawRandomBtn.Location = new System.Drawing.Point(24, 11);
             this.DrawRandomBtn.Name = "DrawRandomBtn";
             this.DrawRandomBtn.Size = new System.Drawing.Size(119, 29);
             this.DrawRandomBtn.TabIndex = 23;
             this.DrawRandomBtn.Text = "Draw Winners";
-            this.DrawRandomBtn.UseVisualStyleBackColor = true;
+            this.DrawRandomBtn.UseVisualStyleBackColor = false;
             this.DrawRandomBtn.Click += new System.EventHandler(this.DrawRandomBtn_Click);
             // 
             // leaderboardDataGridView
             // 
+            this.leaderboardDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.leaderboardDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.leaderboardDataGridView.Location = new System.Drawing.Point(12, 82);
             this.leaderboardDataGridView.Name = "leaderboardDataGridView";
@@ -72,12 +75,14 @@
             // 
             // returnButton
             // 
-            this.returnButton.Location = new System.Drawing.Point(245, 12);
+            this.returnButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.returnButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.returnButton.Location = new System.Drawing.Point(283, 11);
             this.returnButton.Name = "returnButton";
             this.returnButton.Size = new System.Drawing.Size(94, 29);
             this.returnButton.TabIndex = 25;
             this.returnButton.Text = "Return";
-            this.returnButton.UseVisualStyleBackColor = true;
+            this.returnButton.UseVisualStyleBackColor = false;
             this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
             // ExitBox
@@ -116,8 +121,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DrawRandomBtn);
             this.Controls.Add(this.leaderboardDataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Admin";
-            this.Text = "Admin Form";
+            this.Text = "   ";
             this.Load += new System.EventHandler(this.Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.leaderboardDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).EndInit();

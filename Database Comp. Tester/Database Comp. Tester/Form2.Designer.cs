@@ -132,12 +132,14 @@
             // 
             // enterButton
             // 
+            this.enterButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.enterButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.enterButton.Location = new System.Drawing.Point(333, 119);
             this.enterButton.Name = "enterButton";
             this.enterButton.Size = new System.Drawing.Size(178, 70);
             this.enterButton.TabIndex = 28;
             this.enterButton.Text = "Enter";
-            this.enterButton.UseVisualStyleBackColor = true;
+            this.enterButton.UseVisualStyleBackColor = false;
             this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
             // 
             // ExitBox
@@ -155,7 +157,7 @@
             // MinimizeBox
             // 
             this.MinimizeBox.Image = global::Database_Comp._Tester.Properties.Resources._1744044;
-            this.MinimizeBox.Location = new System.Drawing.Point(447, 13);
+            this.MinimizeBox.Location = new System.Drawing.Point(445, 13);
             this.MinimizeBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimizeBox.Name = "MinimizeBox";
             this.MinimizeBox.Size = new System.Drawing.Size(30, 30);
@@ -180,8 +182,9 @@
             this.Controls.Add(this.InputTextBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.InputTextBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Login";
-            this.Text = "Sign In Form";
+            this.Text = "    ";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).EndInit();

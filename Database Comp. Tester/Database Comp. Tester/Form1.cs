@@ -38,15 +38,6 @@ namespace Database_Comp._Tester
         //    }
         //}
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            Students = Directory.GetFiles(StudentFolderPath);
-            StudentInfo = new string[Students.Length, 3];
-            GetStudentInfo();
-            OpenDatabase();
-            Leaderboard();
-
-        }
         void OpenDatabase()
         {
             StreamReader reader = new StreamReader(EventsPath);
@@ -186,13 +177,43 @@ namespace Database_Comp._Tester
             leaderboardDataGridView.Sort(leaderboardDataGridView.Columns["Points"], ListSortDirection.Descending);
             leaderboardDataGridView.ClearSelection();
         }
+        private void StudentEventTracker_Load(object sender, EventArgs e)
+        {
+            Students = Directory.GetFiles(StudentFolderPath);
+            StudentInfo = new string[Students.Length, 3];
+            GetStudentInfo();
+            OpenDatabase();
+            Leaderboard();
+        }
 
-        private void returnButton_Click(object sender, EventArgs e)
+        private void returnButton_Click_1(object sender, EventArgs e)
         {
             Login l = new Login();
             this.Hide();
             l.ShowDialog();
             this.Close();
+        }
+
+        private void MinimizeBox_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void ExitBox_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void AddButton_Click_1(object sender, EventArgs e)
+        {
+            if (comboBox1.Text != "")
+            {
+                CheckJson();
+            }
+            else
+            {
+                MessageBox.Show("Please Select an Event");
+            }
         }
     }
 }
