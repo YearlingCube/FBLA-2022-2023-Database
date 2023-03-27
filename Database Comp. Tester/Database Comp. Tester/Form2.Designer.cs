@@ -51,7 +51,7 @@
             this.InputTextBox6.MaxLength = 1;
             this.InputTextBox6.Name = "InputTextBox6";
             this.InputTextBox6.Size = new System.Drawing.Size(45, 70);
-            this.InputTextBox6.TabIndex = 27;
+            this.InputTextBox6.TabIndex = 5;
             this.InputTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.InputTextBox6.TextChanged += new System.EventHandler(this.InputTextBox6_TextChanged);
             this.InputTextBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputTextBox6_KeyPress);
@@ -64,7 +64,7 @@
             this.InputTextBox5.MaxLength = 1;
             this.InputTextBox5.Name = "InputTextBox5";
             this.InputTextBox5.Size = new System.Drawing.Size(45, 70);
-            this.InputTextBox5.TabIndex = 26;
+            this.InputTextBox5.TabIndex = 4;
             this.InputTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.InputTextBox5.TextChanged += new System.EventHandler(this.InputTextBox6_TextChanged);
             this.InputTextBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputTextBox6_KeyPress);
@@ -77,7 +77,7 @@
             this.InputTextBox4.MaxLength = 1;
             this.InputTextBox4.Name = "InputTextBox4";
             this.InputTextBox4.Size = new System.Drawing.Size(45, 70);
-            this.InputTextBox4.TabIndex = 25;
+            this.InputTextBox4.TabIndex = 3;
             this.InputTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.InputTextBox4.TextChanged += new System.EventHandler(this.InputTextBox6_TextChanged);
             this.InputTextBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputTextBox6_KeyPress);
@@ -90,7 +90,7 @@
             this.InputTextBox3.MaxLength = 1;
             this.InputTextBox3.Name = "InputTextBox3";
             this.InputTextBox3.Size = new System.Drawing.Size(45, 70);
-            this.InputTextBox3.TabIndex = 24;
+            this.InputTextBox3.TabIndex = 2;
             this.InputTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.InputTextBox3.TextChanged += new System.EventHandler(this.InputTextBox6_TextChanged);
             this.InputTextBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputTextBox6_KeyPress);
@@ -103,7 +103,7 @@
             this.InputTextBox2.MaxLength = 1;
             this.InputTextBox2.Name = "InputTextBox2";
             this.InputTextBox2.Size = new System.Drawing.Size(45, 70);
-            this.InputTextBox2.TabIndex = 23;
+            this.InputTextBox2.TabIndex = 1;
             this.InputTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.InputTextBox2.TextChanged += new System.EventHandler(this.InputTextBox6_TextChanged);
             this.InputTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputTextBox6_KeyPress);
@@ -125,7 +125,7 @@
             this.InputTextBox1.MaxLength = 1;
             this.InputTextBox1.Name = "InputTextBox1";
             this.InputTextBox1.Size = new System.Drawing.Size(45, 70);
-            this.InputTextBox1.TabIndex = 19;
+            this.InputTextBox1.TabIndex = 0;
             this.InputTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.InputTextBox1.TextChanged += new System.EventHandler(this.InputTextBox6_TextChanged);
             this.InputTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputTextBox6_KeyPress);
@@ -137,7 +137,7 @@
             this.enterButton.Location = new System.Drawing.Point(333, 119);
             this.enterButton.Name = "enterButton";
             this.enterButton.Size = new System.Drawing.Size(178, 70);
-            this.enterButton.TabIndex = 28;
+            this.enterButton.TabIndex = 6;
             this.enterButton.Text = "Enter";
             this.enterButton.UseVisualStyleBackColor = false;
             this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
@@ -186,6 +186,7 @@
             this.Name = "Login";
             this.Text = "    ";
             this.Load += new System.EventHandler(this.Login_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputTextBox6_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeBox)).EndInit();

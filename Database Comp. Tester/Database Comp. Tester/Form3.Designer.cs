@@ -53,13 +53,14 @@
             // 
             this.DrawRandomBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.DrawRandomBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DrawRandomBtn.Location = new System.Drawing.Point(24, 11);
+            this.DrawRandomBtn.Location = new System.Drawing.Point(106, 11);
             this.DrawRandomBtn.Name = "DrawRandomBtn";
             this.DrawRandomBtn.Size = new System.Drawing.Size(119, 29);
-            this.DrawRandomBtn.TabIndex = 23;
+            this.DrawRandomBtn.TabIndex = 0;
             this.DrawRandomBtn.Text = "Draw Winners";
             this.DrawRandomBtn.UseVisualStyleBackColor = false;
             this.DrawRandomBtn.Click += new System.EventHandler(this.DrawRandomBtn_Click);
+            this.DrawRandomBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DrawRandomBtn_KeyPress);
             // 
             // leaderboardDataGridView
             // 
@@ -71,19 +72,21 @@
             this.leaderboardDataGridView.RowHeadersWidth = 51;
             this.leaderboardDataGridView.RowTemplate.Height = 29;
             this.leaderboardDataGridView.Size = new System.Drawing.Size(429, 302);
-            this.leaderboardDataGridView.TabIndex = 22;
+            this.leaderboardDataGridView.StandardTab = true;
+            this.leaderboardDataGridView.TabIndex = 2;
             // 
             // returnButton
             // 
             this.returnButton.BackColor = System.Drawing.Color.Gainsboro;
             this.returnButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.returnButton.Location = new System.Drawing.Point(283, 11);
+            this.returnButton.Location = new System.Drawing.Point(231, 11);
             this.returnButton.Name = "returnButton";
-            this.returnButton.Size = new System.Drawing.Size(94, 29);
-            this.returnButton.TabIndex = 25;
+            this.returnButton.Size = new System.Drawing.Size(119, 29);
+            this.returnButton.TabIndex = 1;
             this.returnButton.Text = "Return";
             this.returnButton.UseVisualStyleBackColor = false;
             this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
+            this.returnButton.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DrawRandomBtn_KeyPress);
             // 
             // ExitBox
             // 
@@ -121,9 +124,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DrawRandomBtn);
             this.Controls.Add(this.leaderboardDataGridView);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Admin";
-            this.Text = "   ";
+            this.Text = " Admin";
             this.Load += new System.EventHandler(this.Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.leaderboardDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).EndInit();

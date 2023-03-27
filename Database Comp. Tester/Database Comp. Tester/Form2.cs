@@ -219,6 +219,14 @@ namespace Database_Comp._Tester
                 default:
                     break;
             }
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                enterButton_Click(sender, e);
+            }
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                Close();
+            }
         }
         public String password()
         {
@@ -248,6 +256,14 @@ namespace Database_Comp._Tester
         private void MinimizeBox_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                MessageBox.Show("The Enter Key has been pressed.");
+            }
         }
     }
 }

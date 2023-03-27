@@ -206,5 +206,25 @@ namespace Database_Comp._Tester
         {
             Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(leaderboardDataGridView.Visible == true)
+                leaderboardDataGridView.Visible = false;
+            else
+                leaderboardDataGridView.Visible = true;
+        }
+
+        private void DrawRandomBtn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Not Working. Need to Finish
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                Login l = new Login();
+                this.Hide();
+                l.ShowDialog();
+                this.Close();
+            }
+        }
     }
 }
