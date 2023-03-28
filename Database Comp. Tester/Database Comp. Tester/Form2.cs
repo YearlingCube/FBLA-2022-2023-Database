@@ -103,24 +103,6 @@ namespace Database_Comp._Tester
             }
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
-        {
-            CheckJson();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void MinimizeBox_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-        private void InputTextBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
         private void InputTextBox6_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
@@ -233,15 +215,6 @@ namespace Database_Comp._Tester
             m_password = InputTextBox1.Text + InputTextBox2.Text + InputTextBox3.Text + InputTextBox4.Text + InputTextBox5.Text + InputTextBox6.Text;
             return m_password;
         }
-        public void passwordCheck()
-        {
-            if (m_password.Length >= 6) { CheckJson(); }
-        }
-
-        private void InputTextBox1_TextChanged(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private void InputTextBox6_TextChanged(object sender, EventArgs e)
         {
@@ -256,14 +229,6 @@ namespace Database_Comp._Tester
         private void MinimizeBox_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void Login_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Return)
-            {
-                MessageBox.Show("The Enter Key has been pressed.");
-            }
         }
     }
 }

@@ -125,25 +125,14 @@ namespace Database_Comp._Tester
                 {
                     FileContents[j] = JsonSerializer.Deserialize<String>(jsonContents[j]);
                 }
+                if (m_password == FileContents[2])
+                {
+                    this.Text = FileContents[0];
+                }
                 StudentInfo[i, 0] = FileContents[0];
                 StudentInfo[i, 2] = FileContents[1];
                 StudentInfo[i, 1] = FileContents[3];
             }
-        }
-
-        private void AddButton_Click(object sender, EventArgs e)
-        {
-            CheckJson();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void MinimizeBox_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
         }
 
         public void Leaderboard()
