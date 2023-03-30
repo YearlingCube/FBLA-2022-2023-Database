@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.AddButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.MinimizeBox = new System.Windows.Forms.PictureBox();
@@ -35,6 +36,8 @@
             this.leaderboardDataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.returnButton = new System.Windows.Forms.Button();
+            this.selectEventLabel = new System.Windows.Forms.Label();
+            this.selectEventTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.leaderboardDataGridView)).BeginInit();
@@ -90,7 +93,7 @@
             // 
             this.leaderboardDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.leaderboardDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.leaderboardDataGridView.Location = new System.Drawing.Point(12, 81);
+            this.leaderboardDataGridView.Location = new System.Drawing.Point(12, 98);
             this.leaderboardDataGridView.Name = "leaderboardDataGridView";
             this.leaderboardDataGridView.ReadOnly = true;
             this.leaderboardDataGridView.RowHeadersWidth = 51;
@@ -106,7 +109,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(24, 47);
+            this.label1.Location = new System.Drawing.Point(21, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(410, 31);
             this.label1.TabIndex = 21;
@@ -124,12 +127,30 @@
             this.returnButton.UseVisualStyleBackColor = false;
             this.returnButton.Click += new System.EventHandler(this.returnButton_Click_1);
             // 
+            // selectEventLabel
+            // 
+            this.selectEventLabel.AutoSize = true;
+            this.selectEventLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.selectEventLabel.ForeColor = System.Drawing.Color.Red;
+            this.selectEventLabel.Location = new System.Drawing.Point(12, 42);
+            this.selectEventLabel.Name = "selectEventLabel";
+            this.selectEventLabel.Size = new System.Drawing.Size(162, 20);
+            this.selectEventLabel.TabIndex = 32;
+            this.selectEventLabel.Text = "Please Select an Event";
+            this.selectEventLabel.Visible = false;
+            // 
+            // selectEventTimer
+            // 
+            this.selectEventTimer.Interval = 2000;
+            this.selectEventTimer.Tick += new System.EventHandler(this.selectEventTimer_Tick);
+            // 
             // StudentEventTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 398);
+            this.ClientSize = new System.Drawing.Size(456, 412);
             this.ControlBox = false;
+            this.Controls.Add(this.selectEventLabel);
             this.Controls.Add(this.returnButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.leaderboardDataGridView);
@@ -157,5 +178,7 @@
         private DataGridView leaderboardDataGridView;
         private Label label1;
         private Button returnButton;
+        private Label selectEventLabel;
+        private System.Windows.Forms.Timer selectEventTimer;
     }
 }

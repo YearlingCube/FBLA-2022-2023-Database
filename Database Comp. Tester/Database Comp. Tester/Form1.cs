@@ -93,7 +93,11 @@ namespace Database_Comp._Tester
             Event = Events[index].Split("|");
             if (FileContents[4].Contains(Event[0]))
             {
-                MessageBox.Show("Student Has Already Been To Event!");
+                selectEventLabel.Text = "Student Has Already Been To Event!";
+                selectEventLabel.ForeColor = Color.Red;
+                selectEventLabel.Visible = true;
+                selectEventTimer.Start();
+                //MessageBox.Show("Student Has Already Been To Event!");
                 return;
             }
             if (Event[0] == comboBox1.SelectedItem.ToString())
@@ -110,7 +114,11 @@ namespace Database_Comp._Tester
             File.WriteAllLines(path, jsonContents);
             GetStudentInfo();
             Leaderboard();
-            MessageBox.Show("Points Redeemed!");
+            selectEventLabel.Text = "Points Redeemed!";
+            selectEventLabel.ForeColor = Color.Green;
+            selectEventLabel.Visible = true;
+            selectEventTimer.Start();
+            //MessageBox.Show("Points Redeemed!");
         }
         void GetStudentInfo()
         {
@@ -201,8 +209,17 @@ namespace Database_Comp._Tester
             }
             else
             {
-                MessageBox.Show("Please Select an Event");
+                selectEventLabel.Text = "Please Select an Event";
+                selectEventLabel.ForeColor = Color.Red;
+                selectEventLabel.Visible = true;
+                selectEventTimer.Start();
+                //MessageBox.Show("Please Select an Event");
             }
+        }
+
+        private void selectEventTimer_Tick(object sender, EventArgs e)
+        {
+            selectEventLabel.Visible = false;
         }
     }
 }

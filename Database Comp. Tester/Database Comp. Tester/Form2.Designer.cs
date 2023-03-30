@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.InputTextBox6 = new System.Windows.Forms.TextBox();
             this.InputTextBox5 = new System.Windows.Forms.TextBox();
             this.InputTextBox4 = new System.Windows.Forms.TextBox();
@@ -38,6 +39,8 @@
             this.enterButton = new System.Windows.Forms.Button();
             this.ExitBox = new System.Windows.Forms.PictureBox();
             this.MinimizeBox = new System.Windows.Forms.PictureBox();
+            this.incorrectLoginLabel = new System.Windows.Forms.Label();
+            this.incorrectLoginTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeBox)).BeginInit();
@@ -166,12 +169,30 @@
             this.MinimizeBox.TabStop = false;
             this.MinimizeBox.Click += new System.EventHandler(this.MinimizeBox_Click_1);
             // 
+            // incorrectLoginLabel
+            // 
+            this.incorrectLoginLabel.AutoSize = true;
+            this.incorrectLoginLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.incorrectLoginLabel.ForeColor = System.Drawing.Color.Red;
+            this.incorrectLoginLabel.Location = new System.Drawing.Point(358, 199);
+            this.incorrectLoginLabel.Name = "incorrectLoginLabel";
+            this.incorrectLoginLabel.Size = new System.Drawing.Size(153, 20);
+            this.incorrectLoginLabel.TabIndex = 31;
+            this.incorrectLoginLabel.Text = "User Does Not Exist!";
+            this.incorrectLoginLabel.Visible = false;
+            // 
+            // incorrectLoginTimer
+            // 
+            this.incorrectLoginTimer.Interval = 2000;
+            this.incorrectLoginTimer.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 200);
+            this.ClientSize = new System.Drawing.Size(523, 228);
             this.ControlBox = false;
+            this.Controls.Add(this.incorrectLoginLabel);
             this.Controls.Add(this.ExitBox);
             this.Controls.Add(this.MinimizeBox);
             this.Controls.Add(this.enterButton);
@@ -207,5 +228,7 @@
         private Button enterButton;
         private PictureBox ExitBox;
         private PictureBox MinimizeBox;
+        private Label incorrectLoginLabel;
+        private System.Windows.Forms.Timer incorrectLoginTimer;
     }
 }

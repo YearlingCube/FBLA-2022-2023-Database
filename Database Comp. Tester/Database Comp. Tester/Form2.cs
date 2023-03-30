@@ -63,25 +63,31 @@ namespace Database_Comp._Tester
                 }
 
             }
-            MessageBox.Show("User Does Not Exist! " + m_password, "Input Error"); ;
+            //MessageBox.Show("User Does Not Exist! " + m_password, "Input Error"); ;
             return false;
 
         }
         private void enterButton_Click(object sender, EventArgs e)
         {
-            
-            if(m_password == "123456")
+
+            if (m_password == "123456")
             {
                 Admin a = new Admin();
                 this.Hide();
                 a.ShowDialog();
                 this.Close();
-            }else if (CheckJson())
+            }
+            else if (CheckJson())
             {
                 StudentEventTracker s = new StudentEventTracker(m_password);
                 this.Hide();
                 s.ShowDialog();
                 this.Close();
+            }
+            else if (!CheckJson())
+            {
+                incorrectLoginLabel.Visible = true;
+                incorrectLoginTimer.Start();
             }
         }
         void GetStudentInfo()
@@ -229,6 +235,12 @@ namespace Database_Comp._Tester
         private void MinimizeBox_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            incorrectLoginLabel.Visible = false;
+            incorrectLoginTimer.Stop();
         }
     }
 }
