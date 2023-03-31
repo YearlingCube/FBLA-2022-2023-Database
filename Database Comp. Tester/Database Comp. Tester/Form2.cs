@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿// Matthew - Thomas - Aaron
+// Login Form
+// This Form is a Login Form to Allow Students & Admin To Login
 using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Database_Comp._Tester
 {
     public partial class Login : Form
-    {
+    {   
+        // Declares Variables
         string StudentFolderPath = Directory.GetCurrentDirectory() + "\\IDS\\";
         string EventsPath = Directory.GetCurrentDirectory() + "\\Events.json";
         string[] Students = Array.Empty<string>();
@@ -27,24 +21,31 @@ namespace Database_Comp._Tester
 
         private void Login_Load(object sender, EventArgs e)
         {
+            // Declaring Student Info
             Students = Directory.GetFiles(StudentFolderPath);
             StudentInfo = new string[Students.Length, 3];
+
+            // Starts Basic Methods
             GetStudentInfo();
             OpenDatabase();
         }
         void OpenDatabase()
         {
+            // Opens Event File
             StreamReader reader = new StreamReader(EventsPath);
 
             string[] Event = new string[2];
+            
             Events = File.ReadAllText(EventsPath).Split(" ");
+            
+            // Checks If File Exist & If It Does It Reads and Splits The Lines Into The Event Array
             if (File.Exists(EventsPath))
             {
                 foreach (string events in reader.ReadLine().Split(" "))
                 {
                     Event = events.Split("|");
-                    //comboBox1.Items.Add(Event[0]);
                 }
+                // Closes File
                 reader.Close();
 
             }
@@ -53,6 +54,7 @@ namespace Database_Comp._Tester
         {
             string test;
 
+            // Checks Students For The Password
             for (int i = 0; i < Students.Length; i++)
             {
                 test = Path.GetFileName(Students[i]);
@@ -63,13 +65,12 @@ namespace Database_Comp._Tester
                 }
 
             }
-            //MessageBox.Show("User Does Not Exist! " + m_password, "Input Error"); ;
             return false;
 
         }
         private void enterButton_Click(object sender, EventArgs e)
         {
-
+            // Admin Login
             if (m_password == "123456")
             {
                 Admin a = new Admin();
@@ -77,6 +78,7 @@ namespace Database_Comp._Tester
                 a.ShowDialog();
                 this.Close();
             }
+            // Student Login
             else if (CheckJson())
             {
                 StudentEventTracker s = new StudentEventTracker(m_password);
@@ -84,6 +86,7 @@ namespace Database_Comp._Tester
                 s.ShowDialog();
                 this.Close();
             }
+            // Nothing Found
             else if (!CheckJson())
             {
                 incorrectLoginLabel.Visible = true;
@@ -109,11 +112,14 @@ namespace Database_Comp._Tester
             }
         }
 
+        #region KeyPress
         private void InputTextBox6_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             TextBox textBox = (TextBox)sender;
             textBox.Focus();
+            
+            // Each Time You Type It Switches And Combines Them Into The Password
             switch (textBox.Name)
             {
 
@@ -207,17 +213,22 @@ namespace Database_Comp._Tester
                 default:
                     break;
             }
+
+            // Login
             if (e.KeyChar == (char)Keys.Return)
             {
                 enterButton_Click(sender, e);
             }
+            // Closes Form
             if (e.KeyChar == (char)Keys.Escape)
             {
                 Close();
             }
         }
+        #endregion
         public String password()
         {
+            // Combines Password Digits
             m_password = InputTextBox1.Text + InputTextBox2.Text + InputTextBox3.Text + InputTextBox4.Text + InputTextBox5.Text + InputTextBox6.Text;
             return m_password;
         }

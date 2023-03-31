@@ -1,9 +1,7 @@
-using System;
-using System.Collections;
+// Matthew - Thomas - Aaron
+// Login Form
+// This Form is a Login Form to Allow Students & Admin To Login
 using System.ComponentModel;
-using System.IO;
-using System.Json;
-using System.Net.Http.Json;
 using System.Text.Json;
 
 namespace Database_Comp._Tester
@@ -24,26 +22,16 @@ namespace Database_Comp._Tester
             InitializeComponent();
             m_password = password;
         }
-        //public void CheckInput()
-        //{
-        //    if (InputTextBox1.TextLength > 0 && InputTextBox2.TextLength > 0 && InputTextBox3.TextLength > 0 && InputTextBox4.TextLength > 0 && InputTextBox5.TextLength > 0 && InputTextBox6.TextLength > 0)
-        //    {
-        //        AddButton.Enabled = true;
-        //        AddButton.BackColor = Color.Cyan;
-        //    }
-        //    else
-        //    {
-        //        AddButton.Enabled = false;
-        //        AddButton.BackColor = Color.Black;
-        //    }
-        //}
 
         void OpenDatabase()
         {
+            // Open Event File
             StreamReader reader = new StreamReader(EventsPath);
 
             string[] Event = new string[2];
             Events = File.ReadAllText(EventsPath).Split(" ");
+            
+            // Splits Events Into Events Array
             if (File.Exists(EventsPath))
             {
                 foreach (string events in reader.ReadLine().Split(" "))
@@ -51,6 +39,7 @@ namespace Database_Comp._Tester
                     Event = events.Split("|");
                     comboBox1.Items.Add(Event[0]);
                 }
+                // Closes Event File
                 reader.Close();
 
             }
@@ -59,6 +48,7 @@ namespace Database_Comp._Tester
         {
             string test;
 
+            // Checks If Student Number Exists
             for (int i = 0; i < Students.Length; i++)
             {
                 test = Path.GetFileName(Students[i]);
@@ -70,8 +60,9 @@ namespace Database_Comp._Tester
                 }
 
             }
-            MessageBox.Show("User Does Not Exist! " + m_password, "Input Error"); ;
 
+            // Password Doesnt Exist
+            MessageBox.Show("User Does Not Exist! " + m_password, "Input Error"); ;
         }
         void ReadJson(string path, string studentID)
         {
@@ -83,12 +74,12 @@ namespace Database_Comp._Tester
             // Read File
             // Convert Json Lines Into Readable lines   
             jsonContents = File.ReadAllLines(path);
+
             for (int i = 0; i < 5; i++)
             {
                 FileContents[i] = JsonSerializer.Deserialize<String>(jsonContents[i]);
             }
-            //FileContents = File.ReadAllLines(path);
-
+            // Finds Event In .json 
             int index = Array.FindIndex(Events, row => row.Contains(comboBox1.Text));
             Event = Events[index].Split("|");
             if (FileContents[4].Contains(Event[0]))
@@ -97,7 +88,6 @@ namespace Database_Comp._Tester
                 selectEventLabel.ForeColor = Color.Red;
                 selectEventLabel.Visible = true;
                 selectEventTimer.Start();
-                //MessageBox.Show("Student Has Already Been To Event!");
                 return;
             }
             if (Event[0] == comboBox1.SelectedItem.ToString())
@@ -118,7 +108,6 @@ namespace Database_Comp._Tester
             selectEventLabel.ForeColor = Color.Green;
             selectEventLabel.Visible = true;
             selectEventTimer.Start();
-            //MessageBox.Show("Points Redeemed!");
         }
         void GetStudentInfo()
         {
@@ -145,7 +134,6 @@ namespace Database_Comp._Tester
 
         public void Leaderboard()
         {
-            //string[,] studentData = new string[3, 3] { {"Thomas", "50", "11" },{"Aaron", "37", "11" },{"Chris","1","12" } };
             leaderboardDataGridView.Rows.Clear();
             leaderboardDataGridView.ColumnCount = 3;
             leaderboardDataGridView.Columns[0].Name = "Name";
@@ -213,7 +201,6 @@ namespace Database_Comp._Tester
                 selectEventLabel.ForeColor = Color.Red;
                 selectEventLabel.Visible = true;
                 selectEventTimer.Start();
-                //MessageBox.Show("Please Select an Event");
             }
         }
 

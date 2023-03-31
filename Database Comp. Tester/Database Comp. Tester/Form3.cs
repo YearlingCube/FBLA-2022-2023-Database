@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// Matthew - Thomas - Aaron
+// Login Form
+// This Form is a Login Form to Allow Students & Admin To Loginusing System;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Database_Comp._Tester
 {
@@ -35,6 +29,7 @@ namespace Database_Comp._Tester
         }
         void OpenDatabase()
         {
+            // Opens Event Files
             StreamReader reader = new StreamReader(EventsPath);
 
             string[] Event = new string[2];
@@ -44,8 +39,8 @@ namespace Database_Comp._Tester
                 foreach (string events in reader.ReadLine().Split(" "))
                 {
                     Event = events.Split("|");
-                    //comboBox1.Items.Add(Event[0]);
                 }
+                // Closes File
                 reader.Close();
 
             }
@@ -71,7 +66,7 @@ namespace Database_Comp._Tester
 
         public void Leaderboard()
         {
-            //string[,] studentData = new string[3, 3] { {"Thomas", "50", "11" },{"Aaron", "37", "11" },{"Chris","1","12" } };
+            // Creates Leaderboard
             leaderboardDataGridView.Rows.Clear();
             leaderboardDataGridView.ColumnCount = 3;
             leaderboardDataGridView.Columns[0].Name = "Name";
@@ -80,6 +75,8 @@ namespace Database_Comp._Tester
             leaderboardDataGridView.Columns[2].Name = "Grade";
 
             int studentPoints = 0;
+
+            // Puts Student Data Into Leaderboard And Sorts It
             for (int i = 0; i < StudentInfo.GetLength(0); i++)
             {
                 leaderboardDataGridView.Rows.Add();
@@ -128,6 +125,8 @@ namespace Database_Comp._Tester
             int grade = 0;
 
             int studentsPicked = 0;
+
+            // Checks If Students Have Atleast 1 Point And Selects One Studet PER Grades
             while (studentsPicked < 4)
             {
                 number = r.Next(0, StudentInfo.Length / 3);
@@ -191,6 +190,7 @@ namespace Database_Comp._Tester
 
         private void returnButton_Click(object sender, EventArgs e)
         {
+            // Returns To Login Form
             Login l = new Login();
             this.Hide();
             l.ShowDialog();
@@ -199,6 +199,7 @@ namespace Database_Comp._Tester
 
         private void MinimizeBox_Click(object sender, EventArgs e)
         {
+            // Minimizes Form
             this.WindowState = FormWindowState.Minimized;
         }
 
@@ -208,7 +209,7 @@ namespace Database_Comp._Tester
         }
         private void DrawRandomBtn_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Not Working. Need to Finish
+            // Closes Form
             if (e.KeyChar == (char)Keys.Escape)
             {
                 Login l = new Login();
