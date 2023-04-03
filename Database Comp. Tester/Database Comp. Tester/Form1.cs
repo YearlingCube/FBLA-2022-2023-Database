@@ -1,6 +1,6 @@
 // Matthew - Thomas - Aaron
 // Login Form
-// This Form is a Login Form to Allow Students & Admin To Login
+// This Is The Student Form. Allows Students To Add The Event They Have Been Too
 using System.ComponentModel;
 using System.Text.Json;
 
@@ -8,7 +8,7 @@ namespace Database_Comp._Tester
 {
     public partial class StudentEventTracker : Form
     {
-
+        // Creating Variables
         string StudentFolderPath = Directory.GetCurrentDirectory() + "\\IDS\\";
         string EventsPath = Directory.GetCurrentDirectory() + "\\Events.json";
         string[] Students = Array.Empty<string>();
@@ -84,6 +84,7 @@ namespace Database_Comp._Tester
             Event = Events[index].Split("|");
             if (FileContents[4].Contains(Event[0]))
             {
+                // Student Has Aleady Been To Event
                 selectEventLabel.Text = "Student Has Already Been To Event!";
                 selectEventLabel.ForeColor = Color.Red;
                 selectEventLabel.Visible = true;
@@ -92,6 +93,7 @@ namespace Database_Comp._Tester
             }
             if (Event[0] == comboBox1.SelectedItem.ToString())
             {
+                // Adds Event And Points To File
                 FileContents[3] = (int.Parse(FileContents[3]) + int.Parse(Event[1])).ToString();
                 FileContents[4] += " " + Event[0];
             }
@@ -126,6 +128,8 @@ namespace Database_Comp._Tester
                 {
                     this.Text = FileContents[0];
                 }
+
+                // Sets Student Info to File Info
                 StudentInfo[i, 0] = FileContents[0];
                 StudentInfo[i, 2] = FileContents[1];
                 StudentInfo[i, 1] = FileContents[3];
@@ -134,6 +138,7 @@ namespace Database_Comp._Tester
 
         public void Leaderboard()
         {
+            // Creates Leaderboard
             leaderboardDataGridView.Rows.Clear();
             leaderboardDataGridView.ColumnCount = 3;
             leaderboardDataGridView.Columns[0].Name = "Name";
@@ -142,6 +147,7 @@ namespace Database_Comp._Tester
             leaderboardDataGridView.Columns[2].Name = "Grade";
 
             int studentPoints = 0;
+            // Updates Information In leaderboard
             for (int i = 0; i < StudentInfo.GetLength(0); i++)
             {
                 leaderboardDataGridView.Rows.Add();
@@ -159,11 +165,13 @@ namespace Database_Comp._Tester
 
                 }
             }
+            // Sorts & Clears Leaderboard Selection
             leaderboardDataGridView.Sort(leaderboardDataGridView.Columns["Points"], ListSortDirection.Descending);
             leaderboardDataGridView.ClearSelection();
         }
         private void StudentEventTracker_Load(object sender, EventArgs e)
         {
+            // Form Load
             Students = Directory.GetFiles(StudentFolderPath);
             StudentInfo = new string[Students.Length, 3];
             GetStudentInfo();
@@ -173,6 +181,7 @@ namespace Database_Comp._Tester
 
         private void returnButton_Click_1(object sender, EventArgs e)
         {
+            // Opens New Form And Closes The Old One
             Login l = new Login();
             this.Hide();
             l.ShowDialog();
@@ -181,22 +190,26 @@ namespace Database_Comp._Tester
 
         private void MinimizeBox_Click_1(object sender, EventArgs e)
         {
+            // Minimize Button
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void ExitBox_Click(object sender, EventArgs e)
         {
+            // Exit Button
             Close();
         }
 
         private void AddButton_Click_1(object sender, EventArgs e)
         {
+            // Checks If Event Dropdown is Empty
             if (comboBox1.Text != "")
             {
                 CheckJson();
             }
             else
             {
+                // Gives User Error
                 selectEventLabel.Text = "Please Select an Event";
                 selectEventLabel.ForeColor = Color.Red;
                 selectEventLabel.Visible = true;
