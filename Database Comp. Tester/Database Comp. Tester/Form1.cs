@@ -15,6 +15,7 @@ namespace Database_Comp._Tester
         string[] Events = Array.Empty<string>();
         string m_password;
         string[,] StudentInfo;
+        string SelectedStudent;
 
         int DatabasePos = 0;
         public StudentEventTracker(string password)
@@ -127,6 +128,7 @@ namespace Database_Comp._Tester
                 if (m_password == FileContents[2])
                 {
                     this.Text = FileContents[0];
+                    SelectedStudent = FileContents[0];
                 }
 
                 // Sets Student Info to File Info
@@ -161,13 +163,15 @@ namespace Database_Comp._Tester
                     else
                     {
                         leaderboardDataGridView[j, i].Value = StudentInfo[i, j];
+                        if (leaderboardDataGridView[j, i].Value == SelectedStudent)
+                            leaderboardDataGridView[j, i].Selected = true;
+                        
                     }
 
                 }
             }
             // Sorts & Clears Leaderboard Selection
             leaderboardDataGridView.Sort(leaderboardDataGridView.Columns["Points"], ListSortDirection.Descending);
-            leaderboardDataGridView.ClearSelection();
         }
         private void StudentEventTracker_Load(object sender, EventArgs e)
         {
